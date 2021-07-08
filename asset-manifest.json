@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/phgrahamjr-website/static/css/main.3b5a6745.chunk.css",
+    "main.js": "/phgrahamjr-website/static/js/main.2619e1a2.chunk.js",
+    "main.js.map": "/phgrahamjr-website/static/js/main.2619e1a2.chunk.js.map",
+    "runtime-main.js": "/phgrahamjr-website/static/js/runtime-main.26d70c29.js",
+    "runtime-main.js.map": "/phgrahamjr-website/static/js/runtime-main.26d70c29.js.map",
+    "static/js/2.fec26e3d.chunk.js": "/phgrahamjr-website/static/js/2.fec26e3d.chunk.js",
+    "static/js/2.fec26e3d.chunk.js.map": "/phgrahamjr-website/static/js/2.fec26e3d.chunk.js.map",
+    "index.html": "/phgrahamjr-website/index.html",
+    "static/css/main.3b5a6745.chunk.css.map": "/phgrahamjr-website/static/css/main.3b5a6745.chunk.css.map",
+    "static/js/2.fec26e3d.chunk.js.LICENSE.txt": "/phgrahamjr-website/static/js/2.fec26e3d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.26d70c29.js",
+    "static/js/2.fec26e3d.chunk.js",
+    "static/css/main.3b5a6745.chunk.css",
+    "static/js/main.2619e1a2.chunk.js"
+  ]
+}
