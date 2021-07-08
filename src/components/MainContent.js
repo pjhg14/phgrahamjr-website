@@ -1,19 +1,20 @@
 import { Route, Switch } from "react-router";
+import { url } from "../utilities/links";
 
 function MainContent() {
     return(
         <div>
             <Switch>
-                <Route exact path="/">
+                <Route exact path={url}>
                     landing
                 </Route>
-                <Route path="/about">
+                <Route path={`${url}/about`}>
                     about
                 </Route>
-                <Route path="/projects">
+                <Route path={`${url}/projects`}>
                     projects
                 </Route>
-                <Route path="/sites">
+                <Route path={`${url}/sites`}>
                     sites
                 </Route>
             </Switch>
