@@ -10,3 +10,13 @@
 .active {
     color: brown;
 }
+
+.debug {
+    border: 5px solid black;
+}
+
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+}

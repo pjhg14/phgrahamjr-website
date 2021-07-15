@@ -1,5 +1,6 @@
 import { Route, Switch } from "react-router";
 import { url } from "../utilities/links";
+import ProjectPage from "./projects/ProjectPage";
 
 function MainContent() {
     return(
@@ -12,7 +13,7 @@ function MainContent() {
                     about
                 </Route>
                 <Route path={`${url}/projects`}>
-                    projects
+                    <ProjectPage/>
                 </Route>
                 <Route path={`${url}/sites`}>
                     sites
