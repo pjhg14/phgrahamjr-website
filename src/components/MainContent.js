@@ -1,25 +1,25 @@
 import { Route, Switch } from "react-router";
-import { url } from "../utilities/links";
-import ProjectPage from "./projects/ProjectPage";
+import ProjectPage from "./content/projects/ProjectPage";
+import LandingPage from "./content/LandingPage";
+import AboutPage from "./content/AboutPage";
+import LinkPage from "./content/LinkPage";
 
 function MainContent() {
     return(
-        <div>
-            <Switch>
-                <Route exact path={url}>
-                    landing
-                </Route>
-                <Route path={`${url}/about`}>
-                    about
-                </Route>
-                <Route path={`${url}/projects`}>
-                    <ProjectPage/>
-                </Route>
-                <Route path={`${url}/sites`}>
-                    sites
-                </Route>
-            </Switch>
-        </div>
+        <Switch>
+            <Route exact path="/">
+                <LandingPage />
+            </Route>
+            <Route path={"/about"}>
+                <AboutPage />
+            </Route>
+            <Route path={"/projects"}>
+                <ProjectPage />
+            </Route>
+            <Route path={"/links"}>
+                <LinkPage />
+            </Route>
+        </Switch>
     )
 }
 
