@@ -15,7 +15,9 @@ function ProjectCard({ project }) {
             <div className="card-detail">
                 <h3>{title}</h3>
                 <p>{short_description}</p>
-                <a href={repo_url}>GitHub</a>
+                {/* instead of repo link, will be list of technologies used  */}
+                <p>list of techs used</p>
+                {/* <a className="main-link" href={"https://github.com/"}>GitHub</a> */}
             </div>
         </div>
     )

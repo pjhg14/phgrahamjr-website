@@ -12,7 +12,16 @@ function ProjectList({ projects }) {
 
     return(
         <main>
-            <h2>A list of what I have done</h2>
+            <h1>A list of what I have done</h1>
+            <div className="filter-bar">
+                <label htmlFor="filter">Filter By:</label>
+                <select id="filter" name="filter" >
+                    <option>None(No specific order)</option>
+                    <option>Date</option>
+                    <option>Complexity</option>
+                </select>
+                <button className="direction toggle">Asc/Desc</button>
+            </div>
             <div className="card-list">
                 {projectCards}
             </div>

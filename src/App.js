@@ -1,16 +1,15 @@
 import './App.css';
 import MainContent from './components/MainContent';
 import Navigation from './components/Navigation';
-import Footer from "./components/Footer";
 
 function App() {
-  return (
-    <div className="App">
-        <Navigation />
-        <MainContent />
-        <Footer />
-    </div>
-  );
+    // add logic for themes
+    return (
+        <div className="App">
+            <Navigation />
+            <MainContent />
+        </div>
+    );
 }
 
 export default App;

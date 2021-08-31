@@ -1,16 +1,9 @@
 :root {
     /* Font */
     font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-
-    /* Hue, Saturation, Lightness constants */
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 
     /* fallback colors (if browser does not support hsla) */
-    --main-color: #373F51;
-    --secondary-color: #E5DADA;
-    --tertiary-color: #17C4B3;
-    --quaternary-color: #FFF;
-    --quinary-color: #FFF;
 
     /* color vars */
     --main-color: hsla(222, 19%, 27%, 1);
@@ -19,11 +12,33 @@
     --quaternary-color: #FFF;
     --quinary-color: #FFF;
 
+    /* greens */
+    --green1: rgb(15, 96, 43);
+    --green2: rgb(11,214,78);
+    --green3: rgb(122,234,91);
+    --green4: rgb(181,242,93);
+    --green5: rgb(220,248,189);
+    --green6: rgb(92, 169, 71);
+
+    /* not doing the waves atm... might come back to them though */
+    /* --wave-fill-1: #0f602b;
+    --wave-fill-2: #5ca847;
+    --wave-fill-3: #b5f25d; */
+
+    /* main theme (dark theme) */
+    --background-color: hsl(110, 0%, 15%);
+    --text-color: hsl(0, 17%, 88%);
+    --inver-text-color: hsl(0, 0%, 0%);
+    /* navigation border green, link active green */
+    --accent-color: hsl(107, 77%, 64%);
+    --gradient: linear-gradient(to right var(--accent-color),var(--text-color));
+    
     --top-spacing: 5vh;
     --bar-spacing: 0.25rem;
+    --nav-width: 9rem;
 }
-
-/* Fill App to screen */
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
 body {
     position: absolute;
     margin: 0;
@@ -35,13 +50,13 @@ body {
 
 #root {
     height: 100%;
-    
 }
 
 .App {
     text-align: center;
     height: 100%;
-    background-color: var(--main-color);
+    /* background-color: var(--main-color); */
+    background-color: var(--background-color);
     display: flex;
 
     /* display: grid;
@@ -56,20 +71,59 @@ body {
             |
     */
 }
-/* END Fill App to screen */
 
-/* Resets */
+.App.light {
+    --background-color: hsla(110, 0%, 15%, 1);
+    
+}
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* Resets ///////////////////////////////////////////////////////////////////////////////////////////// */
+/* ---------------------------------------------------------------------------------------------------- */
 a {
     text-decoration: none;
 }
-/* END Resets */
 
-/* nav styles */
+i {
+    text-decoration: none;
+    font-style: normal;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+}
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* Skeleton styles */
+.skele-img {
+    /* background-color: grey;
+    border-radius: 100%; */
+    animation: skele-load 1s linear infinite alternate;
+}
+
+@keyframes skele-load {
+    0% {
+        background-color: hsl(0, 0%, 50%);
+    }
+
+    100% {
+        background-color: hsl(0, 0%, 70%);
+    }
+}
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* Navigation ///////////////////////////////////////////////////////////////////////////////////////// */
+/* ---------------------------------------------------------------------------------------------------- */
 .sidebar {
     display: flex;
     z-index: 5;
     width: 0;
-    transform: translateX(-8rem);
+    transform: translateX(calc(var(--nav-width) * -1));
     transition: transform 400ms;
 }
 
@@ -79,12 +133,17 @@ a {
 }
 
 .navigation {
+    /* overrides */
+    --background-color: hsla(110, 0%, 20%, 1);
+
+    /* styles */
     display: flex;
-    width: 8rem;
+    width: var(--nav-width);
     flex-direction: column;
     font-size: xx-large;
-    background-color: var(--tertiary-color);
-    border-right: var(--bar-spacing) solid hsla(174, 79%, 20%, 1);
+    background-color: var(--background-color);
+    border-right: var(--bar-spacing) solid var(--green3);
+
 }
 
 .nav-title {
@@ -93,8 +152,7 @@ a {
     margin-block-end: 0;
     padding-top: 1em;
     padding-bottom: 1em;
-    /* make slightly darker than main nav color */
-    background-color: hsla(174, 79%, 20%, 1);
+    background-color: var(--green3);
 }
 
 .nav-button {
@@ -102,6 +160,7 @@ a {
     padding-right: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
+    color: var(--secondary-color);
     
     /* background-color: black; */
 }
@@ -111,8 +170,10 @@ a {
 }
 
 .nav-button.active {
-    color: brown;
-    background-color: grey;
+    --background-color: hsla(110, 0%, 30%, 1);
+
+    color: var(--green3);
+    background-color: var(--background-color);
 }
 
 .nav-aside {
@@ -122,7 +183,8 @@ a {
 
 .nav-tag {
     border: 0px;
-    background-color: var(--tertiary-color);
+    border-radius: 0 5px 5px 0;
+    background-color: var(--green3);
 }
 
 .nav-tag:hover {
@@ -130,19 +192,19 @@ a {
     color: maroon;
     background-color: black;
 }
-/* END nav styles */
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
 
-/* Main Content */
+/* ---------------------------------------------------------------------------------------------------- */
+/* Main Content /////////////////////////////////////////////////////////////////////////////////////// */
+/* ---------------------------------------------------------------------------------------------------- */
 main {
     display: flex;
     flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
     margin-left: 1rem;
     flex-grow: 8;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     color: var(--secondary-color);
-    
 }
 
 main::-webkit-scrollbar {
@@ -160,26 +222,74 @@ main::-webkit-scrollbar-thumb {
     background-color: var(--tertiary-color);
 }
 
-/* Landing Page */
+main.centered {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.15rem;
+}
 
-/* END Landing Page */
+/* ---------------------------------------------------------------------------------------------------- */
+/* Main:Landing Page ////////////////////////////////////////////////////////////////////////////////// */
+/* ---------------------------------------------------------------------------------------------------- */
+.landing {
+    font-size: 3rem;
+    margin-right: 0.9rem;
+    /* -webkit-text-fill-color: white;
+    -webkit-text-stroke: 5px black; */
+}
 
-/* About Page */
+/* .main-title {
+    
+}
+
+.sub-title {
+    
+} */
+
+.instructions {
+    /* appears third (along with instructions) */
+    --order: 3;
+    font-size: 1rem;
+}
+
+.mobile-instructions {
+    display: none;
+}
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* Main:About Page //////////////////////////////////////////////////////////////////////////////////// */
+/* ---------------------------------------------------------------------------------------------------- */
+.profile-pic {
+    width: 380px;
+    height: 380px;
+    border-radius: 100%;
+}
+
 .about {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
 
-/* END About Page */
-
-/* Project Page */
+/* ---------------------------------------------------------------------------------------------------- */
+/* Main:Project Page ////////////////////////////////////////////////////////////////////////////////// */
+/* ---------------------------------------------------------------------------------------------------- */
+.filter-bar {
+    display: flex;
+    justify-content: left;
+    margin-left: 0.5rem;
+    margin-bottom: 1rem;
+}
 
 .card-list {
-    margin-right: 1rem;
+    margin-right: 1.5rem;
+    margin-left: 0.5rem;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
 }
 
 .card {
@@ -187,13 +297,18 @@ main::-webkit-scrollbar-thumb {
     margin-bottom: 10px;
     text-align: left;
     z-index: 1;
-    
     background-color: black;
+    cursor: pointer;
+    transition: transform 200ms;
+}
+
+.card:hover {
+    transform: scale(1.01);
 }
 
 .card-img {
-    /* 172.03w x 114h */
-    max-height: 114px;
+    margin: 0.3rem;
+    max-height: 125px;
     max-width: auto;
     height: auto;
     width: auto;
@@ -204,35 +319,56 @@ main::-webkit-scrollbar-thumb {
 }
 
 .demo-video {
-    width: 75vw;
+    width: 60vw;
     height: auto;
+    justify-self: center;
 }
 
 .no-video {
     /* 789.8w x 402h */
     display: inline-block;
-    width: 75vw;
+    align-self: center;
+    width: 60vw;
+    /* width: 920px; */
     height: 400px;
     border: 1px solid black;
 }
-/* END Project Page */
 
-/* Link Page */
-
-/* Credits Page */
-
-/* END Main Content */
-
-/* Footer styles */
-footer {
-    position: fixed;
-    left: 0;
-    right: var(--bar-spacing);
-    bottom: 0;
-    background-color: var(--tertiary-color);
+.links {
+    padding: 1rem;
+    
 }
-/* END footer styles */
 
+.main-link {
+    color: var(--secondary-color);
+}
+
+.main-link:hover {
+    color: var(--tertiary-color);
+}
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* Main:Link Page ///////////////////////////////////////////////////////////////////////////////////// */
+/* ---------------------------------------------------------------------------------------------------- */
+.vis-link {
+    /* Todo: change colors */
+    background-color: slategrey;
+    border: 5px solid brown;
+    border-radius: 5rem;
+}
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* Other... /////////////////////////////////////////////////////////////////////////////////////////// */
+/* ---------------------------------------------------------------------------------------------------- */
 .debug {
     border: 5px solid black;
 }
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */

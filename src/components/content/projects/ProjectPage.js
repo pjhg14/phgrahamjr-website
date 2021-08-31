@@ -37,6 +37,17 @@ const sampleProjects = [
         video_url: "",
         live_url: "",
         priority: 4
+    },
+    {
+        id: 4,
+        title: "test4",
+        image: null,
+        short_description: "A very short description",
+        long_description: "A longer description going into the technologies used for this project",
+        repo_url: "",
+        video_url: "",
+        live_url: "",
+        priority: 2
     }
 ]
 
@@ -51,8 +62,6 @@ export default function ProjectPage() {
     //             setProjects(queriedProjects)
     //         })
     // },[])
-
-    console.log(path)
 
     return(
         <Switch>

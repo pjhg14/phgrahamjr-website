@@ -30,7 +30,7 @@ function ProjectInfo() {
     //         })
     // },[id])
     
-    console.log({id, url, project})
+    // console.log({id, url, project})
 
     // if (!loaded) return <h1>Loading...</h1>
 
@@ -52,19 +52,22 @@ function ProjectInfo() {
                 <img 
                     className="no-video"
                     width="560"
-                    src="" 
+                    src="/assets/clapperboard.jpg" 
                     alt="No video found"
                 />
             }
             {/*  */}
             <div className="links">
-                <a href={live_url}>Website</a>
-                <a href={repo_url}>GitHub</a>
+                <a className="main-link" href={live_url}>Live Website</a>
+                |
+                <a className="main-link" href={repo_url}>GitHub Repository</a>
             </div>
             
             <p>{long_description}</p>
             {/* Technologies */}
-            <button onClick={() => history.goBack()}>Back</button>
+            <div>
+                <button onClick={() => history.goBack()}>Back</button>
+            </div>
         </main>
     )
 }
