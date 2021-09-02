@@ -46,30 +46,17 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
+    background-color: var(--background-color);
 }
 
 #root {
-    height: 100%;
+    height: 100vh;
 }
 
 .App {
     text-align: center;
-    height: 100%;
-    /* background-color: var(--main-color); */
-    background-color: var(--background-color);
+    height: 100vh;
     display: flex;
-
-    /* display: grid;
-    grid-template-columns: auto  1fr;
-    grid-template-rows: 1fr auto; */
-    /* 
-            |
-    <Nav>   |   <MainContent>
-            |
-            |
-            |
-            |
-    */
 }
 
 .App.light {
@@ -97,11 +84,48 @@ h1,h2,h3,h4,h5,h6 {
 /* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */
 
-/* Skeleton styles */
-.skele-img {
-    /* background-color: grey;
-    border-radius: 100%; */
+/* ---------------------------------------------------------------------------------------------------- */
+/* Skeleton styles //////////////////////////////////////////////////////////////////////////////////// */
+/* ---------------------------------------------------------------------------------------------------- */
+.skele-bg {
+    /* prevent background resizing */
+    flex-shrink: 0; 
     animation: skele-load 1s linear infinite alternate;
+}
+
+.skele-card {
+    cursor: default;
+}
+
+.skele-detail {
+    width: 80%;
+    margin-left: 1rem;
+}
+
+.skele-title {
+    width: 30%;
+    height: 2rem;
+    border-radius: 0.125rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.skele-desc div {
+    width: 95%;
+    height: .7rem;
+    margin-bottom: 0.3rem;
+    border-radius: 0.125rem;
+}
+
+div.skele-desc div:last-child {
+    width: 70%;
+    margin-bottom: 0.8rem;
+}
+
+.skele-techs {
+    width: 45%;
+    height: .5rem;
+    border-radius: 0.125rem;
 }
 
 @keyframes skele-load {
@@ -203,8 +227,8 @@ main {
     flex-direction: column;
     margin-left: 1rem;
     flex-grow: 8;
-    /* overflow-y: scroll; */
-    color: var(--secondary-color);
+    overflow-y: scroll;
+    color: var(--text-color);
 }
 
 main::-webkit-scrollbar {
@@ -213,13 +237,14 @@ main::-webkit-scrollbar {
 
 main::-webkit-scrollbar-track {
     /* TODO: change to main background color */
-    background-color: black;
+    background-color: var(--background-color);
 
 }
 
 main::-webkit-scrollbar-thumb {
     /* TODO: Change to secondary color */
-    background-color: var(--tertiary-color);
+    background-color: var(--accent-color);
+    /* border-radius: .5rem; */
 }
 
 main.centered {
@@ -261,16 +286,17 @@ main.centered {
 /* ---------------------------------------------------------------------------------------------------- */
 /* Main:About Page //////////////////////////////////////////////////////////////////////////////////// */
 /* ---------------------------------------------------------------------------------------------------- */
-.profile-pic {
-    width: 380px;
-    height: 380px;
-    border-radius: 100%;
-}
-
 .about {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-right: 1.5rem;
+}
+
+.profile-pic {
+    width: 380px;
+    height: 380px;
+    border-radius: 100%;
 }
 /* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */
@@ -308,14 +334,27 @@ main.centered {
 
 .card-img {
     margin: 0.3rem;
-    max-height: 125px;
-    max-width: auto;
-    height: auto;
-    width: auto;
+    height: 125px;
+    width: 200px;
 }
 
 .card-detail {
-    margin-left: 15px;
+    width: 75%;
+    margin-left: 1rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-overflow: clip;
+}
+
+.card-detail * {
+    margin: 0;
+}
+
+.tech-list {
+    font-size: 0.7rem;
 }
 
 .demo-video {
@@ -361,6 +400,16 @@ main.centered {
 /* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */
 
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
+/* Mobile Styles ////////////////////////////////////////////////////////////////////////////////////// */
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */
 

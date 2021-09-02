@@ -1,3 +1,4 @@
+import SkeletonCard from "../../sub-components/SkeletonCard";
 import ProjectCard from "./ProjectCard";
 
 function ProjectList({ projects }) {
@@ -8,6 +9,10 @@ function ProjectList({ projects }) {
 
     const projectCards = sortedProjects.map(project => {
         return <ProjectCard key={project.id} project={project} />
+    })
+
+    const skeleCards = projects.map(project => {
+        return <SkeletonCard key={project.id} />
     })
 
     return(
@@ -23,6 +28,7 @@ function ProjectList({ projects }) {
                 <button className="direction toggle">Asc/Desc</button>
             </div>
             <div className="card-list">
+                {/* {skeleCards} */}
                 {projectCards}
             </div>
         </main>

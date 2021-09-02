@@ -3,7 +3,7 @@ export default function AboutPage() {
         <main className="centered">
             <h1>About me</h1>
             <div className="about"> 
-                <img className="profile-pic skele-img" src="/assets/PG-profile-pic-city.png" alt="profile-pic" />
+                <img className="profile-pic skele-bg" src="/assets/PG-profile-pic-city.png" alt="profile-pic" />
                 <section className="overview">
                     <p className="summary">
                         I am a software developer specializing in the development of frontend, backend, and fullstack web applications 

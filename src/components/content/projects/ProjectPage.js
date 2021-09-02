@@ -51,17 +51,22 @@ const sampleProjects = [
     }
 ]
 
+
+
 export default function ProjectPage() {
     const [projects, setProjects] = useState(sampleProjects)
     const { path } = useRouteMatch()
 
-    // useEffect(() => {
-    //     fetch(projectURL)
-    //         .then(resp => resp.json())
-    //         .then(queriedProjects => {
-    //             setProjects(queriedProjects)
-    //         })
-    // },[])
+    useEffect(() => {
+        // get actual list of projects
+        // fetch(projectURL)
+        //     .then(resp => resp.json())
+        //     .then(queriedProjects => {
+        //         setProjects(queriedProjects)
+        //     })
+    },[])
+
+    
 
     return(
         <Switch>

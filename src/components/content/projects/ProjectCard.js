@@ -3,21 +3,20 @@ import { useHistory, useRouteMatch } from "react-router-dom";
 function ProjectCard({ project }) {
     const { url } = useRouteMatch()
     const history = useHistory()
-    const { id, title, image, short_description, repo_url } = project
+    const { id, title, image, short_description} = project
 
     return(
-        <div className="card debug" onClick={() => history.push(`${url}/${id}`)}>
+        <div className="card" onClick={() => history.push(`${url}/${id}`)}>
             { !!image ? 
-                <img className="card-img" src={image} alt={`${title} project`} /> 
+                <img className="card-img skele-bg" src={image} alt={`${title} project`} /> 
                 : 
-                <img className="card-img" src="/assets/project-image-not-found.png" alt="default"/>
+                <img className="card-img skele-bg" src="/assets/project-image-not-found.png" alt="default"/>
             }
             <div className="card-detail">
-                <h3>{title}</h3>
+                <h2>{title}</h2>
                 <p>{short_description}</p>
-                {/* instead of repo link, will be list of technologies used  */}
-                <p>list of techs used</p>
-                {/* <a className="main-link" href={"https://github.com/"}>GitHub</a> */}
+                {/* instead of repo link, will be short list of technologies used (~5)  */}
+                <p className="tech-list">[tech1] [tech2] [tech3] [tech4] [tech5]</p>
             </div>
         </div>
     )
