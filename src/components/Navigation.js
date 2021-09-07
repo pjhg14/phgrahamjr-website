@@ -13,7 +13,6 @@ function Navigation() {
                     <span>Title</span>
                 </NavLink>
                 <NavLink className="nav-button" to="/about">
-                    
                     <span>About</span>
                 </NavLink>
                 <NavLink className="nav-button" to="/projects">

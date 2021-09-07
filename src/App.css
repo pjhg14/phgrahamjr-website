@@ -25,10 +25,16 @@
     --wave-fill-2: #5ca847;
     --wave-fill-3: #b5f25d; */
 
+    /* color fallbacks */
+    --background-color: #262626;
+    --text-color: #e6dbdb;
+    --inverted-text-color: #000000;
+    --accent-color: #7bea5d;
+
     /* main theme (dark theme) */
     --background-color: hsl(110, 0%, 15%);
     --text-color: hsl(0, 17%, 88%);
-    --inver-text-color: hsl(0, 0%, 0%);
+    --inverted-text-color: hsl(0, 0%, 0%);
     /* navigation border green, link active green */
     --accent-color: hsl(107, 77%, 64%);
     --gradient: linear-gradient(to right var(--accent-color),var(--text-color));
@@ -141,12 +147,34 @@ div.skele-desc div:last-child {
 /* ---------------------------------------------------------------------------------------------------- */
 
 /* ---------------------------------------------------------------------------------------------------- */
+/* Sub-Components ///////////////////////////////////////////////////////////////////////////////////// */
+/* ---------------------------------------------------------------------------------------------------- */
+/* Logo */
+
+
+/* Glow */
+.glow {
+    background-color: var(--accent-color);
+}
+
+/* Particles */
+
+/* Arrow */
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------------------------------------- */
 /* Navigation ///////////////////////////////////////////////////////////////////////////////////////// */
 /* ---------------------------------------------------------------------------------------------------- */
 .sidebar {
+    position: fixed;
     display: flex;
+    left: 0;
+    height: 100%;
     z-index: 5;
     width: 0;
+    color: var(--background-color);
     transform: translateX(calc(var(--nav-width) * -1));
     transition: transform 400ms;
 }
@@ -157,17 +185,14 @@ div.skele-desc div:last-child {
 }
 
 .navigation {
-    /* overrides */
-    --background-color: hsla(110, 0%, 20%, 1);
+    --background-color: hsl(110, 0%, 20%);
 
-    /* styles */
     display: flex;
     width: var(--nav-width);
     flex-direction: column;
-    font-size: xx-large;
+    font-size: 2rem;
     background-color: var(--background-color);
     border-right: var(--bar-spacing) solid var(--green3);
-
 }
 
 .nav-title {
@@ -185,8 +210,6 @@ div.skele-desc div:last-child {
     padding-top: 10px;
     padding-bottom: 10px;
     color: var(--secondary-color);
-    
-    /* background-color: black; */
 }
 
 .nav-button:hover {
@@ -202,7 +225,6 @@ div.skele-desc div:last-child {
 
 .nav-aside {
     margin-top: var(--top-spacing);
-
 }
 
 .nav-tag {
@@ -212,9 +234,8 @@ div.skele-desc div:last-child {
 }
 
 .nav-tag:hover {
-    /* TODO: change color */
-    color: maroon;
-    background-color: black;
+    --accent-color: hsl(107, 77%, 80%);
+    background-color: var(--accent-color);
 }
 /* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */
@@ -263,13 +284,26 @@ main.centered {
     -webkit-text-stroke: 5px black; */
 }
 
-/* .main-title {
-    
+.title {
+    display: flex;
+    justify-content: center;
 }
 
-.sub-title {
-    
-} */
+.title * {
+    margin: 0;
+    text-align: left;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.suffix {
+    margin-left: 2rem;
+    font-size: 15rem;
+}
 
 .instructions {
     /* appears third (along with instructions) */
@@ -324,11 +358,14 @@ main.centered {
     text-align: left;
     z-index: 1;
     background-color: black;
-    cursor: pointer;
+    cursor: pointer;    
     transition: transform 200ms;
 }
 
-.card:hover {
+.card:hover,
+.card:focus {
+    /* TODO: better selection animation */
+    outline: 1px solid var(--accent-color);
     transform: scale(1.01);
 }
 
@@ -339,10 +376,8 @@ main.centered {
 }
 
 .card-detail {
-    width: 75%;
-    margin-left: 1rem;
-    margin-top: 0.3rem;
-    margin-bottom: 0.3rem;
+    width: 85%;
+    margin: 0.3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -355,6 +390,32 @@ main.centered {
 
 .tech-list {
     font-size: 0.7rem;
+}
+
+.overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: hsla(0, 0%, 50%, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 9998;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 9999;
+}
+
+.modal-close {
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .demo-video {
