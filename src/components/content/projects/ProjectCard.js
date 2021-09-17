@@ -5,7 +5,7 @@ function ProjectCard({ project }) {
     const { dispatch } = useContext(ModalContext)
     const { title, image, short_description} = project
 
-    function handleCardClick(event) {
+    function handleCardClick() {
         dispatch({
             type: "open",
             payload: project

@@ -3,6 +3,22 @@ export default function AboutPage() {
         <main className="centered">
             <h1>About me</h1>
             <div className="about"> 
+                <div className="profile-card">
+                    <div className="profile-card-front">
+                        <img className="profile-pic" src="/assets/PG-profile-pic.jpg" alt="card front"/>
+                    </div>
+                    <div className="profile-card-back">
+                        <img src="/assets/PG-profile-pic-city.png" alt="card back"/>
+                    </div>
+                </div>
+                <div className="summary">summary</div>
+            </div>
+        </main>
+    )
+}
+
+/*
+<div className="about"> 
                 <img className="profile-pic skele-bg" src="/assets/PG-profile-pic-city.png" alt="profile-pic" />
                 <section className="overview">
                     <p className="summary">
@@ -29,6 +45,4 @@ export default function AboutPage() {
                     </p>
                 </section>
             </div>
-        </main>
-    )
-}
+*/

@@ -1,8 +1,6 @@
 import { createContext, useEffect, useReducer, useState } from "react"
-import { Route, Switch, useRouteMatch } from "react-router"
 import ProjectList from "./ProjectList"
 import { projectURL } from "../../../utilities/links";
-import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
 
 // Modal State -------------------------------------------------------------------------/
@@ -133,7 +131,7 @@ export default function ProjectPage() {
                         className={`direction-toggle ${isAsc ? "ascending" : "descending"}`} 
                         onClick={() => setIsAsc(!isAsc)}
                     >
-                        {isAsc ? "Ascending" : "Decending"}
+                        {isAsc ? "ASC" : "DESC"}
                     </button>
                 </div>
                 <ProjectList projects={sortedProjects}/>

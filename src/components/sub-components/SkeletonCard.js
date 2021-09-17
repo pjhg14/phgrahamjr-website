@@ -1,6 +1,6 @@
 export default function SkeletonCard() {
     return(
-        <div className="card skele-card">
+        <div className="skele-card">
             <div className="card-img skele-bg"></div>
             <div className="skele-detail">
                 {/* <h3>{title}</h3> */}
