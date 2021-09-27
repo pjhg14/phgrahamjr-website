@@ -5,11 +5,9 @@ import { ModalContext } from "./ProjectPage";
 export default function ProjectModal() {
     const { state, dispatch } = useContext(ModalContext)
 
-    function handleClose(event) {
+    function handleClose() {
         dispatch({ type: "close" })
     }
-
-    // console.log(state.project)
     
     if (state.isOpen) {
         return createPortal(
@@ -17,7 +15,7 @@ export default function ProjectModal() {
                 <div className="overlay" onClick={handleClose} />
                 <div className="modal">
                     <button className="modal-close" onClick={handleClose}>close</button>
-                    <h1>{state.project.title}</h1>
+                    <h2>{state.project.title}</h2>
                     { !!state.project.video_url ? (
                             <iframe
                                 className="demo-video"

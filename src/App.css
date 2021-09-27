@@ -6,37 +6,19 @@
     /* fallback colors (if browser does not support hsla) */
 
     /* color vars */
-    --main-color: hsla(222, 19%, 27%, 1);
-    --secondary-color: hsla(0, 17%, 88%, 1);
-    --tertiary-color: hsla(174, 79%, 43%, 1);
-    --quaternary-color: #FFF;
-    --quinary-color: #FFF;
-
-    /* greens */
-    --green1: rgb(15, 96, 43);
-    --green2: rgb(11,214,78);
-    --green3: rgb(122,234,91);
-    --green4: rgb(181,242,93);
-    --green5: rgb(220,248,189);
-    --green6: rgb(92, 169, 71);
-
-    /* not doing the waves atm... might come back to them though */
-    /* --wave-fill-1: #0f602b;
-    --wave-fill-2: #5ca847;
-    --wave-fill-3: #b5f25d; */
 
     /* color fallbacks */
     --background-color: #262626;
     --text-color: #e6dbdb;
-    --inverted-text-color: #000000;
     --accent-color: #7bea5d;
 
     /* main theme (dark theme) */
     --background-color: hsl(110, 0%, 15%);
     --text-color: hsl(0, 17%, 88%);
-    --inverted-text-color: hsl(0, 0%, 0%);
+    
     /* navigation border green, link active green */
     --accent-color: hsl(107, 77%, 64%);
+    --nav-active: rgba(255,255,255,0.2);
     --gradient: linear-gradient(to right var(--accent-color),var(--text-color));
     
     --top-spacing: 5vh;
@@ -52,7 +34,6 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: var(--background-color);
 }
 
 #root {
@@ -63,10 +44,19 @@ body {
     text-align: center;
     height: 100vh;
     display: flex;
+    background-color: var(--background-color);
+
 }
 
 .App.light {
-    --background-color: hsla(110, 0%, 15%, 1);
+    /* main theme (light theme) */
+    --background-color: hsl(0, 17%, 88%);
+    --text-color: hsl(110, 0%, 15%);
+    
+    /* navigation border green, link active green */
+    --accent-color: hsl(107, 77%, 25%);
+    --nav-active: rgba(0,0,0,0.2);
+    --gradient: linear-gradient(to right var(--accent-color),var(--text-color));
     
 }
 /* ---------------------------------------------------------------------------------------------------- */
@@ -86,7 +76,21 @@ i {
 
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    margin: 0;
 }
+
+h1 {
+    font-size: clamp(4rem, 12vw + 1rem , 7rem);
+}
+
+h2 {
+    font-size: clamp(2.5rem, 6vw + 1rem, 4.5rem);
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
 /* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */
 
@@ -157,29 +161,6 @@ div.skele-desc div:last-child {
 /* ---------------------------------------------------------------------------------------------------- */
 /* Logo */
 
-
-/* Glow */
-/* .glow {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 2.5rem;
-    background-color: var(--accent-color);
-    transform: translateY(2.5rem);
-    animation: glow-pulse 10s infinite alternate;
-} */
-
-/* @keyframes glow-pulse {
-    0% {
-        box-shadow: 0 0 4rem 2rem var(--accent-color);
-    }
-
-    100% {
-        box-shadow: 0 0 4rem 4rem var(--accent-color);
-    }
-} */
-
 /* Particles */
 
 /* Arrow */
@@ -190,76 +171,117 @@ div.skele-desc div:last-child {
 /* ---------------------------------------------------------------------------------------------------- */
 /* Navigation ///////////////////////////////////////////////////////////////////////////////////////// */
 /* ---------------------------------------------------------------------------------------------------- */
-.sidebar {
-    position: fixed;
-    display: flex;
-    left: 0;
-    height: 100%;
-    z-index: 5;
-    width: 0;
-    color: var(--background-color);
-    transform: translateX(calc(var(--nav-width) * -1));
-    transition: transform 400ms;
+
+/* Desktop Breakpoint */
+@media only screen and (min-width: 769px) {
+    .sidebar {
+        position: fixed;
+        display: flex;
+        left: 0;
+        height: 100%;
+        z-index: 5;
+        color: var(--background-color);
+        transform: translateX(calc(var(--nav-width) * -1));
+        transition: transform 400ms;
+    }
+
+    .sidebar.active {
+        width: auto;
+        transform: translateX(0);
+    }
+
+    .navigation {
+        display: flex;
+        width: var(--nav-width);
+        flex-direction: column;
+        font-size: 2rem;
+        background-color: var(--background-color);
+        border-right: var(--bar-spacing) solid var(--accent-color);
+    }
+    
+    .nav-title {
+        margin-top: var(--top-spacing);
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        background-color: var(--accent-color);
+    }
+    
+    .nav-button {
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: var(--text-color);
+    }
+    
+    .nav-button:hover {
+        background-color: black;
+    }
+    
+    .nav-button.active {
+        color: var(--accent-color);
+        box-shadow: inset 0 0 999px 999px var(--nav-active);
+    }
+    
+    .nav-aside {
+        margin-top: var(--top-spacing);
+    }
+    
+    .nav-tag {
+        border: 0px;
+        border-radius: 0 5px 5px 0;
+        background-color: var(--accent-color);
+    }
+    
+    .nav-tag:hover {
+        --accent-color: hsl(107, 77%, 80%);
+        background-color: var(--accent-color);
+    }
 }
 
-.sidebar.active {
-    width: auto;
-    transform: translateX(0);
+/* Mobile Breakpoint (targets tablets and smaller) */
+@media only screen and (max-width: 769px) {
+    .sidebar {
+        position: fixed;
+        display: flex;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 5;
+        color: var(--background-color);
+        
+    }
+
+    .navigation {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        font-size: 1.5rem;
+        padding-bottom: 5px;
+        background-color: var(--accent-color);
+        border-top: var(--bar-spacing) solid var(--accent-color);
+    }
+    
+    .nav-title {
+        display: none;
+    }
+    
+    .nav-button {
+        color: var(--text-color);
+    }
+    
+    .nav-button.active {
+        color: var(--accent-color);
+        /* box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.1); */
+    }
+    
+    .nav-aside {
+        display: none;
+    }
 }
 
-.navigation {
-    --background-color: hsl(110, 0%, 20%);
-
-    display: flex;
-    width: var(--nav-width);
-    flex-direction: column;
-    font-size: 2rem;
-    background-color: var(--background-color);
-    border-right: var(--bar-spacing) solid var(--green3);
-}
-
-.nav-title {
-    margin-top: var(--top-spacing);
-    margin-block-start: 0;
-    margin-block-end: 0;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    background-color: var(--green3);
-}
-
-.nav-button {
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: var(--secondary-color);
-}
-
-.nav-button:hover {
-    background-color: black;
-}
-
-.nav-button.active {
-    --background-color: hsla(110, 0%, 30%, 1);
-
-    color: var(--green3);
-    background-color: var(--background-color);
-}
-
-.nav-aside {
-    margin-top: var(--top-spacing);
-}
-
-.nav-tag {
-    border: 0px;
-    border-radius: 0 5px 5px 0;
-    background-color: var(--green3);
-}
-
-.nav-tag:hover {
-    --accent-color: hsl(107, 77%, 80%);
-    background-color: var(--accent-color);
-}
 /* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */
 
@@ -305,30 +327,9 @@ main.centered {
     margin-right: 0.9rem;
 }
 
-.title {
-    display: flex;
-    justify-content: center;
-}
-
-.title * {
-    margin: 0;
-    text-align: left;
-}
-
-.name {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.suffix {
-    margin-left: 2rem;
-    font-size: 15rem;
-}
 
 .instructions {
-    /* appears third (along with instructions) */
-    --order: 3;
+    
     font-size: 1rem;
 }
 
@@ -342,39 +343,89 @@ main.centered {
 /* Main:About Page //////////////////////////////////////////////////////////////////////////////////// */
 /* ---------------------------------------------------------------------------------------------------- */
 .about {
-    display: flex;
-    justify-content: space-around;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr;
     align-items: center;
-    margin-right: 1.5rem;
-}
-
-.profile-card {
-    border: 5px solid red;
-    aspect-ratio: 3/4;
-    width: 20rem;
-}
-
-.profile-card img {
-    width: 100%;
     
 }
 
+.about-content {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.profile-card {
+    aspect-ratio: 3/4;
+    width: 20rem;
+    border: 5px solid red;
+    justify-self: center;
+    flex-shrink: 0;
+    z-index: 1;
+    margin-right: 5rem;
+}
+
+.profile-card-content {
+    position: relative;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    display: grid;
+    grid-template-areas: "content";
+}
+/* 
+Flip card like this for into anim
+.profile-card:hover .profile-card-content {
+    transform: rotateY(0.5turn);
+} */
+
+.profile-card-front {
+    transform: rotateY(0.5turn);
+}
+
+.profile-card-front,
+.profile-card-back {
+    grid-area: content;
+    backface-visibility: hidden;
+}
+
+.profile-card img {
+    /* find way to move border to card content */
+    width: 100%;
+    border: 3px solid var(--text-color);
+    border-radius: 1rem;
+}
+
 .summary {
+    aspect-ratio: 3/4;
+    width: 20rem;
+    justify-self: center;
+    margin-left: 5rem;
+
     border: 5px solid red;
 }
+
+/* Mobile */
+
+
 /* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */
 
 /* ---------------------------------------------------------------------------------------------------- */
 /* Main:Project Page ////////////////////////////////////////////////////////////////////////////////// */
 /* ---------------------------------------------------------------------------------------------------- */
+.projects {
+    margin: 0;
+    gap: 1rem;
+}
+
 .filter-bar {
     display: flex;
     justify-content: left;
     align-items: center;
-    /* text-align: left; */
-    margin-left: 0.5rem;
-    margin-bottom: 1rem;
+    margin: 0 12vw;
 }
 
 #filter {
@@ -406,33 +457,57 @@ main.centered {
 }
 
 .card-list {
-    margin-right: 1.5rem;
-    margin-left: 0.5rem;
-    display: flex;
-    flex-direction: column;
+    margin: 0 10vw;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2rem;
 }
 
-.card {
+.project-card {
     display: flex;
+    width: 15rem;
+    height: 100%;
+    justify-content: center;
     margin-bottom: 10px;
     text-align: left;
+
     z-index: 1;
-    background-color: black;
-    cursor: pointer;    
-    transition: transform 200ms;
+    cursor: pointer;
 }
 
-.card:hover,
-.card:focus {
-    /* TODO: better selection animation */
-    outline: 1px solid var(--accent-color);
-    transform: scale(1.01);
+.project-card-content {
+    display: grid;
+    grid-template-areas: "content";
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border: 3px solid var(--text-color);
+    border-radius: 5px;
+
+    transition: transform 1s, border-color 1.5s;
+    transform-style: preserve-3d;
+}
+
+.project-card-front,
+.project-card-back {
+    grid-area: content;
+    backface-visibility: hidden;
+}
+
+.project-card-back {
+    transform: rotateY(0.5turn);
+}
+
+.project-card:hover .project-card-content,
+.project-card:focus .project-card-content {
+    border-color: var(--accent-color);
+    transform: rotateY(0.5turn);
 }
 
 .card-img {
-    margin: 0.3rem;
-    height: 125px;
-    width: 200px;
+    width: 15rem;
+    height: 10rem;
+    border-radius: 5px 5px 0 0;
 }
 
 .card-detail {
@@ -521,19 +596,14 @@ main.centered {
     border: 5px solid brown;
     border-radius: 5rem;
 }
+
+.icon {
+    vertical-align: middle;
+    color: var(--inverted-text-color);
+}
 /* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */
 
-/* ---------------------------------------------------------------------------------------------------- */
-/* ---------------------------------------------------------------------------------------------------- */
-
-/* ---------------------------------------------------------------------------------------------------- */
-/* ---------------------------------------------------------------------------------------------------- */
-/* Mobile Styles ////////////////////////////////////////////////////////////////////////////////////// */
-/* ---------------------------------------------------------------------------------------------------- */
-/* ---------------------------------------------------------------------------------------------------- */
-
-/* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */
 

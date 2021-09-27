@@ -117,9 +117,9 @@ export default function ProjectPage() {
             state,
             dispatch
         }}>
-            <main>
+            <main className="projects">
                 <ProjectModal />
-                <h1>A list of what I have done</h1>
+                <h2>A list of what I have done</h2>
                 <div className="filter-bar">
                     <label htmlFor="filter">Filter By:</label>
                     <select id="filter" name="filter" onChange={e => setFilter(e.target.value)}>
