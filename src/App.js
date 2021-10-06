@@ -1,12 +1,14 @@
+import { useState } from 'react';
 import './App.css';
 import MainContent from './components/MainContent';
 import Navigation from './components/Navigation';
 
 function App() {
-    // add logic for themes
+    const [isDarkTheme, setIsDarkTheme] = useState(true)    
+
     return (
-        <div className="App">
-            <Navigation />
+        <div className={`App ${isDarkTheme ? "" : "light"}`}>
+            <Navigation isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme}/>
             <MainContent />
         </div>
     );

@@ -17,13 +17,18 @@ export default function AboutPage() {
                 <div className="summary">
                     <p>
                         I am a software developer specializing in the development of frontend, backend, and fullstack web applications 
-                            as well as fullstack and monolithic desktop applications. 
-                        I greatly enjoy the act of creating useful, in-depth applications that aid in the day to day for the end user 
-                            and further enjoy the mitigation of menial tasks through effieient automation and other techniques
-                        I have also graduated from Flatiron School and have my associates degree from Brookdale Community College; 
-                            with experience from both and my background in customer service, I strive to provide the best and brightest 
-                            for those I work for and work with
+                        as well as fullstack and monolithic desktop applications. 
                     </p>
+                    <p>
+                        I greatly enjoy the act of creating useful, in-depth applications that aid in the day to day for the end user 
+                        and further enjoy the mitigation of menial tasks through effieient automation and other techniques
+                    </p>
+                    <p>
+                        I have also graduated from Flatiron School and have my associates degree from Brookdale Community College; 
+                        with experience from both and my background in customer service, I strive to provide the best and brightest 
+                        for those I work for and work with
+                    </p>
+                    <h4>I am Proficient in these technologies</h4>
                     <p className="technologies">
                         Java
                         JavaScript

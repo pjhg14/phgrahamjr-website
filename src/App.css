@@ -198,6 +198,7 @@ div.skele-desc div:last-child {
         background-color: var(--background-color);
         border-right: var(--bar-spacing) solid var(--accent-color);
     }
+
     
     .nav-title {
         margin-top: var(--top-spacing);
@@ -239,6 +240,10 @@ div.skele-desc div:last-child {
         --accent-color: hsl(107, 77%, 80%);
         background-color: var(--accent-color);
     }
+
+    .theme {
+        margin-top: auto;
+    }
 }
 
 /* Mobile Breakpoint (targets tablets and smaller) */
@@ -260,7 +265,7 @@ div.skele-desc div:last-child {
         justify-content: space-evenly;
         font-size: 1.5rem;
         padding-bottom: 5px;
-        background-color: var(--accent-color);
+        background-color: var(--background-color);
         border-top: var(--bar-spacing) solid var(--accent-color);
     }
     
@@ -291,7 +296,7 @@ div.skele-desc div:last-child {
 main {
     display: flex;
     flex-direction: column;
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
     flex-grow: 8;
     overflow-y: scroll;
     color: var(--text-color);
@@ -324,17 +329,27 @@ main.centered {
 /* ---------------------------------------------------------------------------------------------------- */
 .landing {
     font-size: 3rem;
-    margin-right: 0.9rem;
+    margin: 0 0.5rem;
 }
 
 
 .instructions {
-    
     font-size: 1rem;
 }
 
 .mobile-instructions {
+    font-size: 1rem;
     display: none;
+}
+
+@media only screen and (max-width: 769px) {
+    .instructions {
+        display: none;
+    }
+
+    .mobile-instructions {
+        display: inline-block;
+    }
 }
 /* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */
@@ -343,11 +358,9 @@ main.centered {
 /* Main:About Page //////////////////////////////////////////////////////////////////////////////////// */
 /* ---------------------------------------------------------------------------------------------------- */
 .about {
-    overflow: hidden;
     display: grid;
     grid-template-rows: auto 1fr;
     align-items: center;
-    
 }
 
 .about-content {
@@ -355,17 +368,16 @@ main.centered {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    margin: 0 2rem;
 }
 
 .profile-card {
     aspect-ratio: 3/4;
-    width: 20rem;
-    border: 5px solid red;
-    justify-self: center;
-    flex-shrink: 0;
+    max-width: 20rem;
+    height: auto;
     z-index: 1;
-    margin-right: 5rem;
+    
+    /* border: 5px solid red; */
 }
 
 .profile-card-content {
@@ -373,13 +385,19 @@ main.centered {
     transition: transform 2s;
     transform-style: preserve-3d;
     display: grid;
+
     grid-template-areas: "content";
 }
-/* 
-Flip card like this for into anim
-.profile-card:hover .profile-card-content {
+
+/* Flip card like this for into anim */
+/* .profile-card:hover .profile-card-content {
     transform: rotateY(0.5turn);
 } */
+
+/* show proflie picture (remove when card flip animation is done) */
+.profile-card-content {
+    transform: rotateY(0.5turn);
+}
 
 .profile-card-front {
     transform: rotateY(0.5turn);
@@ -389,26 +407,35 @@ Flip card like this for into anim
 .profile-card-back {
     grid-area: content;
     backface-visibility: hidden;
+
+
 }
 
 .profile-card img {
-    /* find way to move border to card content */
     width: 100%;
     border: 3px solid var(--text-color);
     border-radius: 1rem;
+
 }
 
 .summary {
-    aspect-ratio: 3/4;
-    width: 20rem;
     justify-self: center;
-    margin-left: 5rem;
+    margin-left: 2rem;
 
-    border: 5px solid red;
+    /* border: 5px solid red; */
 }
 
 /* Mobile */
+@media only screen and (max-width: 769px) {
+    .about-content {
+        flex-direction: column;
+    }
 
+    .summary {
+        margin: 0;
+        margin-bottom: 5rem;
+    }
+}
 
 /* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */
@@ -430,6 +457,7 @@ Flip card like this for into anim
 
 #filter {
     background-color: var(--text-color);
+    color: var(--background-color);
     border: none;
     border: 1px solid var(--text-color);
     border-radius: 0.5rem 0 0 0.5rem;
@@ -438,6 +466,7 @@ Flip card like this for into anim
 
 .direction-toggle {
     background-color: var(--text-color);
+    color: var(--background-color);
     border: none;
     border: 1px solid var(--text-color);
     border-radius: 0 0.5rem 0.5rem 0rem;
@@ -446,8 +475,7 @@ Flip card like this for into anim
 }
 
 .direction-toggle:hover {
-    --text-color: hsl(0, 17%, 92%);
-    background-color: var(--text-color);
+    box-shadow: inset 0 0 999px 999px var(--nav-active);
     border: 1px solid var(--text-color);
 }
 
@@ -468,6 +496,9 @@ Flip card like this for into anim
     display: flex;
     width: 15rem;
     height: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-basis: 15rem;
     justify-content: center;
     margin-bottom: 10px;
     text-align: left;
@@ -484,7 +515,7 @@ Flip card like this for into anim
     border: 3px solid var(--text-color);
     border-radius: 5px;
 
-    transition: transform 1s, border-color 1.5s;
+    transition: transform 1s, border-color 1.5s, box-shadow 1.5s;
     transform-style: preserve-3d;
 }
 
@@ -492,6 +523,8 @@ Flip card like this for into anim
 .project-card-back {
     grid-area: content;
     backface-visibility: hidden;
+    box-shadow: 0 5px 25px 0 var(--text-color);
+
 }
 
 .project-card-back {
@@ -501,13 +534,19 @@ Flip card like this for into anim
 .project-card:hover .project-card-content,
 .project-card:focus .project-card-content {
     border-color: var(--accent-color);
+    box-shadow: 0 5px 25px 0 var(--accent-color);
+
+
     transform: rotateY(0.5turn);
 }
 
 .card-img {
-    width: 15rem;
+    flex: 0 0 auto;
+    display: block;
+    max-width: 15rem;
     height: 10rem;
-    border-radius: 5px 5px 0 0;
+    padding: 0;
+
 }
 
 .card-detail {
@@ -584,6 +623,22 @@ Flip card like this for into anim
 .main-link:hover {
     color: var(--tertiary-color);
 }
+
+/* Mobile */
+@media only screen and (max-width: 769px) {
+    .card-list {
+        margin: 0 10vw;
+        margin-bottom: 10vh;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+    }
+
+    .project-card:focus .project-card-content {
+        transform: none;
+    }
+}
 /* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */
 
@@ -591,15 +646,49 @@ Flip card like this for into anim
 /* Main:Link Page ///////////////////////////////////////////////////////////////////////////////////// */
 /* ---------------------------------------------------------------------------------------------------- */
 .vis-link {
-    /* Todo: change colors */
-    background-color: slategrey;
-    border: 5px solid brown;
+    display: inline-block;
+    border: 5px solid var(--accent-color);
     border-radius: 5rem;
 }
 
+.link {
+    /* display: inline; */
+    margin: 0;
+}
+
+/* .icon-span {
+    width: 15rem;
+    height: 15rem;
+    background-color: var(--text-color);
+    border-radius: 999px;
+} */
+
 .icon {
+    /* font-size: 10rem; */
+    size: 15px;
+    /* margin: 0; */
+    /* padding: 5rem; */
+    border-radius: 999px;
+    background-color: var(--text-color);
     vertical-align: middle;
-    color: var(--inverted-text-color);
+    color: var(--background-color);
+}
+
+.email-form {
+    /* display: inline-block; */
+    background-color: burlywood;
+    border: 5px solid white;
+    margin: 0 10rem;
+    text-align: left;
+}
+
+/* .form-label {
+    
+} */
+
+.form-input {
+    resize: none;
+    display: block;
 }
 /* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */

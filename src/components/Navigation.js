@@ -1,8 +1,17 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
+import resume from "../resume/Paul_G_resume_ca2021.pdf";
 
-function Navigation() {
+function Navigation({ isDarkTheme, setIsDarkTheme }) {
     const [active, setActive] = useState(false)
+
+    function toggleActive() {
+        setActive(!active)
+    }
+
+    function toggleDarkTheme() {
+        setIsDarkTheme(!isDarkTheme)
+    }
 
     return(
         <div className={`sidebar ${active ? "active" : ""}`}>
@@ -19,11 +28,17 @@ function Navigation() {
                     <span>Projects</span>
                 </NavLink>
                 <NavLink className="nav-button" to="/links">
-                    <span>Links</span>
+                    <span>Contact</span>
                 </NavLink>
+                <a className="nav-button" href={resume} target="_blank" rel="noreferrer">
+                    <span>Resume</span>
+                </a>
+                <a className="nav-button theme" href="#" onClick={toggleDarkTheme}>
+                    <span>{isDarkTheme ? "Light" : "Dark"}</span>
+                </a>
             </nav>
             <div className="nav-aside">
-                <button className="nav-tag" onClick={() => setActive(!active)}>
+                <button className="nav-tag" onClick={toggleActive}>
                     {active ? "<" : ">"}
                 </button>
             </div>
