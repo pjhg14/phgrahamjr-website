@@ -85,6 +85,54 @@ const sampleProjects = [
     }
 ]
 
+const revisedSampleProject = {
+    id: 1,
+    title: "test",
+    short_description: "A very short description",
+    long_description: "A longer description going into the technologies used for this project",
+    completion_date: new Date("2021-09-14"),
+    repositories: [
+        {
+            id: 1,
+            host: "Github",
+            type: "Frontend",
+            link: ""
+        },
+        {
+            id: 2,
+            host: "Github",
+            type: "Backend",
+            link: ""
+        }
+    ],
+    requirements: [
+        {
+            requirement: ""
+        },
+        {
+            requirement: ""
+        },
+        {
+            requirement: ""
+        }
+    ],
+    technologies: [
+        {
+            name: "React"
+        },
+        {
+            name: "Rails"
+        },
+        {
+            name: "JavaScript"
+        }
+    ],
+    video_url: "",
+    live_url: "",
+    complexity: 2,
+    image: ""
+}
+
 export default function ProjectPage() {
     const [projects, setProjects] = useState(sampleProjects)
     // const [projects, setProjects] = useState([])
@@ -113,10 +161,12 @@ export default function ProjectPage() {
     })
 
     return(
-        <ModalContext.Provider value={{
-            state,
-            dispatch
-        }}>
+        <ModalContext.Provider value={
+            {
+                state,
+                dispatch
+            }
+        }>
             <main className="projects">
                 <ProjectModal />
                 <h2>A list of what I have done</h2>
