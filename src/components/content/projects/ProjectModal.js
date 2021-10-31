@@ -1,6 +1,63 @@
 import { useContext } from "react";
 import { createPortal } from "react-dom";
+import LinkButtonBar from "../../sub-components/LinkButtonBar";
+import TechList from "../../sub-components/TechList";
 import { ModalContext } from "./ProjectPage";
+
+// Project Structure
+// {
+//     id: 1,
+//     title: "test1",
+//     short_description: "A very short description",
+//     long_description: "A longer description going into the technologies used for this project",
+//     completion_date: new Date("2021-09-14"),
+//     repositories: [
+//         {
+//             id: 1,
+//             host: "Github",
+//             type: "Frontend",
+//             link: ""
+//         },
+//         {
+//             id: 2,
+//             host: "Github",
+//             type: "Backend",
+//             link: ""
+//         }
+//     ],
+//     requirements: [
+//         {
+//             id: 1,
+//             requirement: ""
+//         },
+//         {
+//             id: 2,
+//             requirement: ""
+//         },
+//         {
+//             id: 3,
+//             requirement: ""
+//         }
+//     ],
+//     technologies: [
+//         {
+//             id: 1,
+//             name: "React"
+//         },
+//         {
+//             id: 2,
+//             name: "Rails"
+//         },
+//         {
+//             id: 3,
+//             name: "JavaScript"
+//         }
+//     ],
+//     video_url: "",
+//     live_url: "",
+//     complexity: 3,
+//     image: ""
+// }
 
 export default function ProjectModal() {
     const { state, dispatch } = useContext(ModalContext)
@@ -27,23 +84,19 @@ export default function ProjectModal() {
                             />
                         ) : (
                             <img 
-                                className="no-video"
+                                className="video-fallback"
                                 width="560"
-                                src="/assets/clapperboard.jpg" 
-                                alt="No video found"
+                                src={state.project.image} 
+                                alt="project"
                             />
                         )
                     }
                     {/* Date Completed */}
-                    <div className="links">
-                        <a className="main-link" href={state.project.live_url}>Live Website</a>
-                        |
-                        <a className="main-link" href={state.project.repo_url}>GitHub Repository</a>
-                    </div>
+                    <LinkButtonBar repos={state.project.repositories} liveURL={state.project.live_url}/>
                     
                     <p>{state.project.long_description}</p>
                     <p>Made With:</p>
-                    {/* Technologies */}                    
+                    <TechList techs={state.project.technologies}/>               
                 </div>
             </>,
             document.getElementById('portal')

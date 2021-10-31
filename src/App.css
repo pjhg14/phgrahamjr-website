@@ -332,6 +332,9 @@ main.centered {
     margin: 0 0.5rem;
 }
 
+.name-title {
+    font-size: 4em;
+}
 
 .instructions {
     font-size: 1rem;
@@ -529,6 +532,13 @@ main.centered {
 
 .project-card-back {
     transform: rotateY(0.5turn);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-techs {
+    margin-top: auto;
+    margin-bottom: 1rem;
 }
 
 .project-card:hover .project-card-content,
@@ -579,9 +589,14 @@ main.centered {
 
 .modal {
     position: fixed;
+
+    /* center */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
     padding: 1.5rem;
     background-color: white;
     z-index: 9999;
@@ -602,26 +617,41 @@ main.centered {
     justify-self: center;
 }
 
-.no-video {
+.video-fallback {
     display: inline-block;
     align-self: center;
     aspect-ratio: 16 / 9;
-    width: 60vw;
-    /* height: 400px; */
+    width: 40vw;
     border: 1px solid black;
 }
 
-.links {
-    padding: 1rem;
-    
+.repo-bar {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
 }
 
-.main-link {
-    color: var(--secondary-color);
+.repo-button {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: 999px;
+    padding: 0.3rem 1em;
+
+    transition: color 500ms;
 }
 
-.main-link:hover {
-    color: var(--tertiary-color);
+.repo-button:hover {
+    color: var(--accent-color)
+}
+
+.github {
+    background-color: black;
+    color: var(--text-color);
+}
+
+.gitlab {
+    background-color: orange;
+    color: var(--background-color);
 }
 
 /* Mobile */
@@ -645,8 +675,14 @@ main.centered {
 /* ---------------------------------------------------------------------------------------------------- */
 /* Main:Link Page ///////////////////////////////////////////////////////////////////////////////////// */
 /* ---------------------------------------------------------------------------------------------------- */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .vis-link {
-    display: inline-block;
+    width: fit-content;
     border: 5px solid var(--accent-color);
     border-radius: 5rem;
 }

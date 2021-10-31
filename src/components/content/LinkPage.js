@@ -1,24 +1,35 @@
-import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function LinkPage() {
     return(
         <main>
             {/* TODO: replace "site:" with image */}
             <h2>Find me here</h2>
-            <section>
+            <section className="contact-links">
                 <a className="vis-link" href="https://www.linkedin.com/in/pgrahamjr" target="_blank" rel="noreferrer">
-                    <span className="icon-span"><FaLinkedin className="icon" /></span>
+                    <span className="icon-span">
+                        <FontAwesomeIcon className="icon" icon={faLinkedin}/>
+                    </span>
                     <span>https://www.linkedin.com/in/pgrahamjr/</span>
                 </a>
                 <a className="vis-link" href="https://github.com/pjhg14" target="_blank" rel="noreferrer">
-                    <span className="icon-span"><FaGithub className="icon"/></span>
+                    <span className="icon-span">
+                        <FontAwesomeIcon className="icon" icon={faGithub} />
+                    </span>
                     <span>https://github.com/pjhg14</span>
                 </a>
                 <p className="vis-link">
-                    <span className="icon-span"><SiGmail className="icon" /></span>
-                    <span>pjhg14@gmail.com</span>
+                    <span className="icon-span">
+                        <FontAwesomeIcon className="icon" icon={faEnvelope} />
+                    </span>
+                    <span>paulhgrahamjr@gmail.com</span>
                 </p>
+            </section>
+            {/* TODO: Email Form */}
+            {/* 
                 <form className="email-form">
                     <label className="form-label" htmlFor="name">Name / Email</label>
                     <input id="name" className="form-input" type="text"/>
@@ -30,8 +41,8 @@ export default function LinkPage() {
                     <textarea id="message" className="form-input" />
 
                     <input type="submit" />
-                </form>
-            </section>
+                </form> 
+            */}
         </main>
     )
 }
