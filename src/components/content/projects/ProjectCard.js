@@ -2,7 +2,7 @@ import { useContext } from "react";
 import TechList from "../../sub-components/TechList";
 import { ModalContext } from "./ProjectPage";
 
-function ProjectCard({ project }) {
+export default function ProjectCard({ project }) {
     const { dispatch } = useContext(ModalContext)
     const { title, image, short_description, technologies, completion_date, complexity } = project
 
@@ -24,7 +24,7 @@ function ProjectCard({ project }) {
                     }
                     <h3>{title}</h3>
                     <p>complexity: {complexity}</p>
-                    <p>Completed: {completion_date.toUTCString()}</p>
+                    <p>Completed: {toNormalizedDate(completion_date)}</p>
                 </div>
                 <div className="project-card-back">
                     <p>{short_description}</p>
@@ -35,7 +35,9 @@ function ProjectCard({ project }) {
     )
 }
 
-export default ProjectCard
+function toNormalizedDate(date) {
+    return date.toDateString().split(" ").slice(1).join(" ")
+}
 
 /*
 <div className="card" onClick={handleCardClick} onKeyDown={handleCardClick} tabIndex="0">
