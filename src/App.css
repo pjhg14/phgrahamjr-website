@@ -47,7 +47,7 @@ body {
 
 .App.light {
     /* main theme (light theme) */
-    --background-color: hsl(0, 17%, 88%);
+    --background-color: hsl(0, 18%, 88%);
     --text-color: hsl(110, 0%, 15%);
     
     /* navigation border green, link active green */
