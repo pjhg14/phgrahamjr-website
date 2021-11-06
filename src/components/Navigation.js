@@ -33,9 +33,9 @@ function Navigation({ isDarkTheme, setIsDarkTheme }) {
                 <a className="nav-button" href={resume} target="_blank" rel="noreferrer">
                     <span>Resume</span>
                 </a>
-                <a className="nav-button theme" href="#" onClick={toggleDarkTheme}>
+                <button className="nav-button theme" href="#" onClick={toggleDarkTheme}>
                     <span>{isDarkTheme ? "Light" : "Dark"}</span>
-                </a>
+                </button>
             </nav>
             <div className="nav-aside">
                 <button className="nav-tag" onClick={toggleActive}>

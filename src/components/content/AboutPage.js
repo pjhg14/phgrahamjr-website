@@ -3,7 +3,7 @@ export default function AboutPage() {
         <main className="about">
             <h2>About me</h2>
             <div className="about-content"> 
-                <div className="profile-card">
+                <section className="profile-card">
                     <div className="profile-card-content">
                         <div className="profile-card-front">
                             <img  src="/assets/PG-profile-pic.jpg" alt="card front"/>
@@ -13,8 +13,8 @@ export default function AboutPage() {
                             <img src="/assets/Card-back.png" alt="card back"/>
                         </div>
                     </div>
-                </div>
-                <div className="summary">
+                </section>
+                <section className="summary">
                     <p>
                         I am a software developer specializing in the development of frontend, backend, and fullstack web applications 
                         as well as fullstack and monolithic desktop applications. 
@@ -28,21 +28,24 @@ export default function AboutPage() {
                         with experience from both and my background in customer service, I strive to provide the best and brightest 
                         for those I work for and work with
                     </p>
-                    <h4>I am Proficient in these technologies</h4>
-                    <p className="technologies">
-                        Java
-                        JavaScript
-                        HTML
-                        CSS
-                        Ruby
-                        Rails
-                        React
-                        Node.js
-                        MySQL
-                        PostreSQL
-                    </p>
-                </div>
+                    
+                </section>
             </div>
+            <section className="languages">
+                <h4>Languages and Frameworks I am proficient with:</h4>
+                <p className="lang-list">
+                    Java
+                    JavaScript
+                    HTML
+                    CSS
+                    Ruby
+                    Rails
+                    React
+                    Node.js
+                    MySQL
+                    PostreSQL
+                </p>
+            </section>
         </main>
     )
 }

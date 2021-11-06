@@ -3,10 +3,7 @@
     font-size: 16px;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 
-    /* fallback colors (if browser does not support hsla) */
-
     /* color vars */
-
     /* color fallbacks */
     --background-color: #262626;
     --text-color: #e6dbdb;
@@ -89,6 +86,12 @@ h2 {
 
 h3 {
     font-size: 1.5rem;
+}
+
+button {
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
 }
 
 /* ---------------------------------------------------------------------------------------------------- */
@@ -210,15 +213,12 @@ div.skele-desc div:last-child {
     }
     
     .nav-button {
-        padding-left: 5px;
-        padding-right: 5px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding: 0.7rem 0;
         color: var(--text-color);
     }
     
     .nav-button:hover {
-        background-color: black;
+        box-shadow: inset 0 0 999px 999px rgba(255, 255, 255, 0.5);
     }
     
     .nav-button.active {
@@ -231,18 +231,19 @@ div.skele-desc div:last-child {
     }
     
     .nav-tag {
-        border: 0px;
+        border: none;
         border-radius: 0 5px 5px 0;
         background-color: var(--accent-color);
     }
     
     .nav-tag:hover {
-        --accent-color: hsl(107, 77%, 80%);
-        background-color: var(--accent-color);
+        box-shadow: inset 0 0 999px 999px rgba(255, 255, 255, 0.5);
     }
 
     .theme {
         margin-top: auto;
+        border: none;
+        background-color: var(--background-color);
     }
 }
 
@@ -284,6 +285,12 @@ div.skele-desc div:last-child {
     
     .nav-aside {
         display: none;
+    }
+
+    .theme {
+        margin-top: 0;
+        border: none;
+        background-color: var(--background-color);
     }
 }
 
@@ -371,7 +378,7 @@ main.centered {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 2rem;
+    margin: 0 4rem;
 }
 
 .profile-card {
@@ -379,8 +386,6 @@ main.centered {
     max-width: 20rem;
     height: auto;
     z-index: 1;
-    
-    /* border: 5px solid red; */
 }
 
 .profile-card-content {
@@ -423,9 +428,12 @@ main.centered {
 
 .summary {
     justify-self: center;
+    width: 45ch;
     margin-left: 2rem;
+}
 
-    /* border: 5px solid red; */
+.technologies {
+    margin-top: 0;
 }
 
 /* Mobile */
@@ -459,20 +467,20 @@ main.centered {
 }
 
 #filter {
+    height: 100%;
     background-color: var(--text-color);
     color: var(--background-color);
-    border: none;
     border: 1px solid var(--text-color);
-    border-radius: 0.5rem 0 0 0.5rem;
+    border-radius: 999px 0 0 999px;
     padding: 0.1rem 0;
 }
 
 .direction-toggle {
+    height: 100%;
     background-color: var(--text-color);
     color: var(--background-color);
-    border: none;
     border: 1px solid var(--text-color);
-    border-radius: 0 0.5rem 0.5rem 0rem;
+    border-radius: 0 999px 999px 0rem;
     box-sizing: border-box;
     padding: 0.1rem 1rem;
 }
@@ -599,6 +607,7 @@ main.centered {
     flex-direction: column;
     padding: 1.5rem;
     background-color: white;
+    border-radius: 0.5rem;
     z-index: 9999;
 }
 
@@ -644,16 +653,6 @@ main.centered {
     color: var(--accent-color)
 }
 
-.github {
-    background-color: black;
-    color: var(--text-color);
-}
-
-.gitlab {
-    background-color: orange;
-    color: var(--background-color);
-}
-
 /* Mobile */
 @media only screen and (max-width: 769px) {
     .card-list {
@@ -675,39 +674,36 @@ main.centered {
 /* ---------------------------------------------------------------------------------------------------- */
 /* Main:Link Page ///////////////////////////////////////////////////////////////////////////////////// */
 /* ---------------------------------------------------------------------------------------------------- */
-.contact-links {
+.links {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
 }
 
-.vis-link {
-    width: fit-content;
-    border: 5px solid var(--accent-color);
-    border-radius: 5rem;
-}
-
-.link {
-    /* display: inline; */
-    margin: 0;
-}
-
-/* .icon-span {
-    width: 15rem;
-    height: 15rem;
+.contact-link {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
     background-color: var(--text-color);
+    padding: 1rem;
+    margin: 0;
+    color: var(--background-color);
+    border: 0.25rem solid var(--accent-color);
     border-radius: 999px;
-} */
+}
+
+.redirecting:hover {
+    box-shadow: inset 0 0 999px 999px rgba(255, 255, 255, 0.5);
+}
 
 .icon {
-    /* font-size: 10rem; */
-    size: 15px;
-    /* margin: 0; */
-    /* padding: 5rem; */
+    color: var(--text-color);
+    font-size: 4rem;
+    padding: 1rem;
+    background-color: var(--background-color);
+    margin-right: 1rem;
     border-radius: 999px;
-    background-color: var(--text-color);
-    vertical-align: middle;
-    color: var(--background-color);
 }
 
 .email-form {
@@ -729,6 +725,29 @@ main.centered {
 /* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */
 
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* Brand colors /////////////////////////////////////////////////////////////////////////////////////// */
+/* ---------------------------------------------------------------------------------------------------- */
+.linkedin {
+    color: blue
+}
+
+.gmail {
+    color: red;
+}
+
+.github {
+    background-color: black;
+    color: var(--text-color);
+}
+
+.gitlab {
+    background-color: orange;
+    color: var(--background-color);
+}
 /* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */
 

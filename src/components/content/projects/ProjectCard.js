@@ -17,6 +17,7 @@ export default function ProjectCard({ project }) {
         <div className="project-card" onClick={handleCardClick} onKeyDown={handleCardClick} tabIndex="0">
             <div className="project-card-content">
                 <div className="project-card-front">
+                    {/* TODO: When project fetch is implemented, remove image ternary (backup images will be set after fetch result) */}
                     { !!image ? 
                         <img className="card-img skele-bg" src={image} alt={`${title} project`} /> 
                         : 

@@ -2,7 +2,7 @@ import { Route, Switch } from "react-router";
 import ProjectPage from "./content/projects/ProjectPage";
 import LandingPage from "./content/LandingPage";
 import AboutPage from "./content/AboutPage";
-import LinkPage from "./content/LinkPage";
+import ContactPage from "./content/ContactPage";
 
 function MainContent() {
     return(
@@ -17,7 +17,7 @@ function MainContent() {
                 <ProjectPage />
             </Route>
             <Route path={"/links"}>
-                <LinkPage />
+                <ContactPage />
             </Route>
         </Switch>
     )
