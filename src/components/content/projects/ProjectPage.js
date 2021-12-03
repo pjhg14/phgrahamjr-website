@@ -142,6 +142,54 @@ const initialProjects = [
         live_url: "",
         complexity: 3,
         image: "assets/career-pad-dashboard.png"
+    },
+    {
+        id: 4,
+        title: "JScribble",
+        short_description: "An online drawing application",
+        long_description: "A web application that allows the user to draw on a canvas board. The creations can then be downloaded onto their computer or, once signed or logged in, can be uploaded for the public to see",
+        completion_date: new Date("2021-11-23"),
+        repositories: [
+            {
+                id: 1,
+                host: "GitHub",
+                type: "Frontend",
+                link: "https://github.com/pjhg14/JScribble-frontend"
+            },
+            {
+                id: 2,
+                host: "GitHub",
+                type: "Backend",
+                link: "https://github.com/pjhg14/JScribble-backend"
+            }
+        ],
+        requirements: [],
+        technologies: [
+            {
+                id: 1,
+                name: "React"
+            },
+            {
+                id: 2,
+                name: "JavaScript"
+            },
+            {
+                id: 3,
+                name: "Node.js"
+            },
+            {
+                id: 4,
+                name: "Ruby"
+            },
+            {
+                id: 6,
+                name: "Rails"
+            }
+        ],
+        video_url: "",
+        live_url: "https://jscribble.netlify.app/",
+        complexity: 3,
+        image: "assets/JScribble-landing.png"
     }
 ]
 
