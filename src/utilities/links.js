@@ -1,5 +1,8 @@
 export const url = "/phgrahamjr-website"
 
-const baseURL = "http://localhost:3000"
+const rootURL = process.env.NODE_ENV !== "production" ? 
+        "http://localhost:3000" : "TBD"
 
-export const projectURL = `${baseURL}/projects`
+
+
+export const projectURL = `${rootURL}/projects`

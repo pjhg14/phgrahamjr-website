@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter as Router } from "react-router-dom";
 import App from './App';
+// TODO: Revert to HashRouter
+// import { HashRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+
 
 ReactDOM.render(
     <Router>

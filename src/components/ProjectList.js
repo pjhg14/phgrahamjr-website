@@ -1,4 +1,4 @@
-import SkeletonCard from "../../sub-components/SkeletonCard";
+import SkeletonCard from "./SkeletonCard";
 import ProjectCard from "./ProjectCard";
 
 const skeleProjects = [

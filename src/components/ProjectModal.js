@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { createPortal } from "react-dom";
-import LinkButtonBar from "../../sub-components/LinkButtonBar";
-import TechList from "../../sub-components/TechList";
-import { ModalContext } from "./ProjectPage";
+import LinkButtonBar from "./LinkButtonBar";
+import TechList from "./TechList";
+import { ModalContext } from "../layouts/ProjectPage";
 
 // Project Structure
 // {

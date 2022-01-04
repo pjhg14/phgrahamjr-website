@@ -1,8 +1,8 @@
 import { createContext, useEffect, useReducer, useState } from "react"
-import ProjectList from "./ProjectList"
-import ProjectModal from "./ProjectModal";
+import ProjectList from "../components/ProjectList"
+import ProjectModal from "../components/ProjectModal";
 // import { projectURL } from "../../../utilities/links";
-import { modalReducer, initialState } from "../../../utilities/modalReducer";
+import { modalReducer, initialState } from "../utilities/modalReducer";
 
 export const ModalContext = createContext()
 
