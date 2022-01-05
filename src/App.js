@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
+import './sass/main.scss';
 import AboutPage from './layouts/AboutPage';
 import ContactPage from './layouts/ContactPage';
 import LandingPage from './layouts/LandingPage';
