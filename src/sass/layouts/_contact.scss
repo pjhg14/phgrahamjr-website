@@ -1,0 +1,50 @@
+// Styles for Contact Layout
+/* ---------------------------------------------------------------------------------------------------- */
+/* Main:Link Page ///////////////////////////////////////////////////////////////////////////////////// */
+/* ---------------------------------------------------------------------------------------------------- */
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    background-color: var(--text-color);
+    padding: 1rem;
+    margin: 0;
+    color: var(--background-color);
+    border: 0.25rem solid var(--accent-color);
+    border-radius: 999px;
+}
+
+.redirecting:hover {
+    box-shadow: inset 0 0 999px 999px rgba(255, 255, 255, 0.5);
+}
+
+.icon {
+    color: var(--text-color);
+    font-size: 4rem;
+    padding: 1rem;
+    background-color: var(--background-color);
+    margin-right: 1rem;
+    border-radius: 999px;
+}
+
+.email-form {
+    /* display: inline-block; */
+    background-color: burlywood;
+    border: 5px solid white;
+    margin: 0 10rem;
+    text-align: left;
+}
+
+.form-input {
+    resize: none;
+    display: block;
+}
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */

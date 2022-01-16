@@ -1,6 +1,6 @@
 import { useContext } from "react";
+import { ModalContext } from "../utilities/context/ModalContext";
 import TechList from "./TechList";
-import { ModalContext } from "../layouts/ProjectPage";
 
 export default function ProjectCard({ project }) {
     const { dispatch } = useContext(ModalContext)

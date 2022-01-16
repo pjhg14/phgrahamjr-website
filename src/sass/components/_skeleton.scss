@@ -1,0 +1,56 @@
+.skele-bg {
+    /* prevent background resizing */
+    flex-shrink: 0; 
+    animation: skele-load 1s linear infinite alternate;
+}
+
+.skele-card {
+    display: flex;
+    margin-bottom: 10px;
+    text-align: left;
+    z-index: 1;
+    background-color: black;
+    cursor: pointer;    
+    transition: transform 200ms;
+}
+
+.skele-detail {
+    width: 80%;
+    margin-left: 1rem;
+}
+
+.skele-title {
+    width: 30%;
+    height: 2rem;
+    border-radius: 0.125rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.skele-desc div {
+    width: 95%;
+    height: .7rem;
+    margin-bottom: 0.3rem;
+    border-radius: 0.125rem;
+}
+
+div.skele-desc div:last-child {
+    width: 70%;
+    margin-bottom: 0.8rem;
+}
+
+.skele-techs {
+    width: 45%;
+    height: .5rem;
+    border-radius: 0.125rem;
+}
+
+@keyframes skele-load {
+    0% {
+        background-color: hsl(0, 0%, 50%);
+    }
+
+    100% {
+        background-color: hsl(0, 0%, 70%);
+    }
+}

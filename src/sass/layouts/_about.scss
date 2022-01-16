@@ -1,0 +1,87 @@
+// Styles for About Layout
+/* ---------------------------------------------------------------------------------------------------- */
+/* Main:About Page //////////////////////////////////////////////////////////////////////////////////// */
+/* ---------------------------------------------------------------------------------------------------- */
+.about {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    align-items: center;
+}
+
+.about-content {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 4rem;
+}
+
+.profile-card {
+    aspect-ratio: 3/4;
+    max-width: 20rem;
+    height: auto;
+    z-index: 1;
+}
+
+.profile-card-content {
+    position: relative;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    display: grid;
+
+    grid-template-areas: "content";
+}
+
+/* Flip card like this for into anim */
+/* .profile-card:hover .profile-card-content {
+    transform: rotateY(0.5turn);
+} */
+
+/* show proflie picture (remove when card flip animation is done) */
+.profile-card-content {
+    transform: rotateY(0.5turn);
+}
+
+.profile-card-front {
+    transform: rotateY(0.5turn);
+}
+
+.profile-card-front,
+.profile-card-back {
+    grid-area: content;
+    backface-visibility: hidden;
+
+
+}
+
+.profile-card img {
+    width: 100%;
+    border: 3px solid var(--text-color);
+    border-radius: 1rem;
+
+}
+
+.summary {
+    justify-self: center;
+    width: 45ch;
+    margin-left: 2rem;
+}
+
+.technologies {
+    margin-top: 0;
+}
+
+/* Mobile */
+@media only screen and (max-width: 769px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .summary {
+        margin: 0;
+        margin-bottom: 5rem;
+    }
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */

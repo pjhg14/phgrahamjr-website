@@ -1,10 +1,10 @@
-import { createContext, useEffect, useReducer, useState } from "react"
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react"
 import ProjectList from "../components/ProjectList"
 import ProjectModal from "../components/ProjectModal";
+import { pageTransition } from "../utilities/animationVariants";
+import { ModalContextProvider } from "../utilities/context/ModalContext";
 // import { projectURL } from "../../../utilities/links";
-import { modalReducer, initialState } from "../utilities/modalReducer";
-
-export const ModalContext = createContext()
 
 const initialProjects = [
     {
@@ -196,7 +196,6 @@ const initialProjects = [
 export default function ProjectPage() {
     const [projects] = useState(initialProjects)
     // const [projects, setProjects] = useState([])
-    const [state, dispatch] = useReducer(modalReducer, initialState)
     const [filter, setFilter] = useState("none")
     const [isAsc, setIsAsc] = useState(true)
 
@@ -222,13 +221,14 @@ export default function ProjectPage() {
     })
 
     return(
-        <ModalContext.Provider value={
-            {
-                state,
-                dispatch
-            }
-        }>
-            <main className="projects">
+        <ModalContextProvider>
+            <motion.main 
+                className="projects"
+                variants={pageTransition}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+            >
                 <ProjectModal />
                 <h2>A list of what I have done</h2>
                 <div className="filter-bar">
@@ -246,7 +246,7 @@ export default function ProjectPage() {
                     </button>
                 </div>
                 <ProjectList projects={sortedProjects}/>
-            </main>
-        </ModalContext.Provider>
+            </motion.main>
+        </ModalContextProvider>
     )
 }

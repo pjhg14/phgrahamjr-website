@@ -1,23 +1,27 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
+import { pageTransition } from "../utilities/animationVariants";
 
+// TODO: Change fa imports to css inclusion
 export default function ContactPage() {
     return(
-        <main>
+        <motion.main
+            variants={pageTransition}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+        >
             <h2>Find me here</h2>
             <section className="links">
                 <a className="contact-link redirecting" href="https://www.linkedin.com/in/pgrahamjr" target="_blank" rel="noreferrer">
-                    <FontAwesomeIcon className="icon linkedin" icon={faLinkedin}/>
+                    <i className="fab fa-linkedin"></i>
                     https://www.linkedin.com/in/pgrahamjr/
                 </a>
                 <a className="contact-link redirecting" href="https://github.com/pjhg14" target="_blank" rel="noreferrer">
-                    <FontAwesomeIcon className="icon" icon={faGithub} />
+                    <i className="fab fa-github"></i>
                     https://github.com/pjhg14
                 </a>
                 <p className="contact-link">
-                    <FontAwesomeIcon className="icon gmail" icon={faEnvelope} />
+                    <i className="fas fa-envelope"></i>
                     paulhgrahamjr@gmail.com
                 </p>
             </section>
@@ -36,6 +40,6 @@ export default function ContactPage() {
                     <input type="submit" />
                 </form> 
             */}
-        </main>
+        </motion.main>
     )
 }

@@ -1,18 +1,17 @@
 export const initialState = {
-    project: null,
-    isOpen: false
+    theme: "dark"
 }
 
-export function modalReducer(state, action) {
+export function themeReducer(state: any, action: any) {
     switch (action.type) {
-        case "open":
+        case "light":
             // opens modal and displays provided project
             return {
                 ...state,
                 project: action.payload,
                 isOpen: true
             }
-        case "close":
+        case "dark":
             // closes modal and clears current project
             return {
                 ...state,
@@ -23,4 +22,9 @@ export function modalReducer(state, action) {
         default:
             return state;
     }
+}
+
+enum Themes {
+    Light = "light",
+    Dark = "dark"
 }

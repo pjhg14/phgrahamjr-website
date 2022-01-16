@@ -1,7 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faGitlab } from "@fortawesome/free-brands-svg-icons";
-
 export default function LinkButtonBar({ repos, liveURL }) {
 
     const repoButtons = repos.map(repo => {
@@ -26,10 +22,10 @@ export default function LinkButtonBar({ repos, liveURL }) {
 function convertToLogo(host) {
     switch (host) {
         case "GitHub":
-            return <FontAwesomeIcon icon={faGithub} />
+            return <i className="fab fa-github"></i>
 
         case "GitLab":
-            return <FontAwesomeIcon icon={faGitlab} />
+            return <i className="fab fa-gitlab"></i>
         default:
             break;
     }

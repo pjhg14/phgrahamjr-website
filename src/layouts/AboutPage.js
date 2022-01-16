@@ -1,6 +1,15 @@
+import { motion } from "framer-motion";
+import { pageTransition } from "../utilities/animationVariants";
+
 export default function AboutPage() {
     return(
-        <main className="about">
+        <motion.main 
+            className="about"
+            variants={pageTransition}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+        >
             <h2>About me</h2>
             <div className="about-content"> 
                 <section className="profile-card">
@@ -45,7 +54,7 @@ export default function AboutPage() {
                     PostreSQL
                 </p>
             </section>
-        </main>
+        </motion.main>
     )
 }
 
