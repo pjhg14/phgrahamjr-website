@@ -1,22 +1,22 @@
 import { useContext } from "react"
 import { NavLink } from "react-router-dom"
 import resume from "../resume/Paul_G_resume_ca2021.pdf";
-import { NavContext } from "../utilities/context/NavContext";
+import { AppContext } from "../utilities/context/AppContext";
 
-function Navigation({ isDarkTheme, setIsDarkTheme }) {
-    const { navActive, setNavActive } = useContext(NavContext)
+export default function Navigation() {
+    const { state, dispatch } = useContext(AppContext)
 
     function toggleActive() {
-        setNavActive(!navActive)
+        dispatch({type: "toggleNav"})
     }
 
     function toggleDarkTheme() {
-        setIsDarkTheme(!isDarkTheme)
+        dispatch({type: "toggleTheme"})
     }
 
     return(
         <>
-            <div className={`sidebar ${navActive ? "active" : ""}`}>
+            <div className={`sidebar ${ state.navActive ? "active" : "" }`}>
                 <nav className="navigation">
                     <p className="nav-title">Menu</p>
                     <NavLink className="nav-button" to="/">
@@ -40,15 +40,15 @@ function Navigation({ isDarkTheme, setIsDarkTheme }) {
                         <span>Resume</span>
                     </a>
                     <button className="nav-button theme" onClick={toggleDarkTheme}>
-                        <span>{isDarkTheme ? "Light" : "Dark"}</span>
+                        <span>{ state.isDarkTheme ? "Light" : "Dark" }</span>
                     </button>
                 </nav>
                 <div className="nav-aside">
                     <button className="nav-tag" onClick={toggleActive}>
-                        { navActive ? 
-                            <i class="fas fa-angle-left"></i> 
+                        { state.navActive ? 
+                            <i className="fas fa-angle-left"></i> 
                             : 
-                            <i class="fas fa-angle-right"></i>
+                            <i className="fas fa-angle-right"></i>
                         }
                     </button>
                 </div>
@@ -58,5 +58,3 @@ function Navigation({ isDarkTheme, setIsDarkTheme }) {
         
     )
 }
-
-export default Navigation

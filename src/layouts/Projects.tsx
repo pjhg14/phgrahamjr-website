@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react"
+import Modal from "../components/Modal";
+import ProjectInfo from "../components/ProjectInfo";
 import ProjectList from "../components/ProjectList"
-import ProjectModal from "../components/ProjectModal";
 import { pageTransition } from "../utilities/animationVariants";
 import { ModalContextProvider } from "../utilities/context/ModalContext";
 // import { projectURL } from "../../../utilities/links";
@@ -193,8 +194,8 @@ const initialProjects = [
     }
 ]
 
-export default function ProjectPage() {
-    const [projects] = useState(initialProjects)
+export default function Project(): JSX.Element {
+    const [ projects ] = useState(initialProjects)
     // const [projects, setProjects] = useState([])
     const [filter, setFilter] = useState("none")
     const [isAsc, setIsAsc] = useState(true)
@@ -212,7 +213,11 @@ export default function ProjectPage() {
     const sortedProjects = projects.sort((projectA, projectB) => {
         switch (filter) {
             case "date":
-                return isAsc ? projectA.completion_date - projectB.completion_date : projectB.completion_date - projectA.completion_date
+                return ( isAsc ? 
+                    projectA.completion_date.getTime() - projectB.completion_date.getTime() 
+                    : 
+                    projectB.completion_date.getTime() - projectA.completion_date.getTime()
+                )
             case "complexity":
                 return isAsc ? projectA.complexity - projectB.complexity : projectB.complexity - projectA.complexity
             default:
@@ -229,7 +234,9 @@ export default function ProjectPage() {
                 animate="animate"
                 exit="exit"
             >
-                <ProjectModal />
+                <Modal>
+                    <ProjectInfo />
+                </Modal>
                 <h2>A list of what I have done</h2>
                 <div className="filter-bar">
                     <label htmlFor="filter">Filter By:</label>

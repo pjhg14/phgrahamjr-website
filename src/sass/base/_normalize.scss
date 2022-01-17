@@ -1,3 +1,18 @@
+@use '../abstracts';
+
+:root {
+    /* Font */
+    font-size: abstracts.$base-font;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+
+    /* color vars */
+    /* main theme (dark theme) */
+    --background-color: #{abstracts.$dark-background-color};
+    --text-color: #{abstracts.$dark-text-color};
+    --accent-color: #{abstracts.$dark-accent-color};
+    --nav-active: rgba(255,255,255,0.2);
+}
+
 *,
 *::before,
 *::after {
@@ -6,9 +21,6 @@
     box-sizing: border-box;
 }
 
-/* ---------------------------------------------------------------------------------------------------- */
-/* Resets ///////////////////////////////////////////////////////////////////////////////////////////// */
-/* ---------------------------------------------------------------------------------------------------- */
 a {
     text-decoration: none;
 }
@@ -18,7 +30,7 @@ i {
     font-style: normal;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
     margin: 0;
 }
@@ -40,6 +52,3 @@ button {
     font-family: inherit;
     cursor: pointer;
 }
-
-/* ---------------------------------------------------------------------------------------------------- */
-/* ---------------------------------------------------------------------------------------------------- */

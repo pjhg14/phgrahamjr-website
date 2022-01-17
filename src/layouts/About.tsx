@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { pageTransition } from "../utilities/animationVariants";
 
-export default function AboutPage() {
+export default function About(): JSX.Element {
     return(
         <motion.main 
             className="about"
@@ -10,8 +10,10 @@ export default function AboutPage() {
             animate="animate"
             exit="exit"
         >
-            <h2>About me</h2>
-            <div className="about-content"> 
+            <header>
+                <h2>About me</h2>
+            </header>
+            <section className="about-content"> 
                 <section className="profile-card">
                     <div className="profile-card-content">
                         <div className="profile-card-front">
@@ -23,7 +25,7 @@ export default function AboutPage() {
                         </div>
                     </div>
                 </section>
-                <section className="summary">
+                <article className="summary">
                     <p>
                         I am a software developer specializing in the development of frontend, backend, and fullstack web applications 
                         as well as fullstack and monolithic desktop applications. 
@@ -37,8 +39,8 @@ export default function AboutPage() {
                         With experience from both and my background in customer service, I strive to provide the best and brightest 
                         for those I work for and work with
                     </p> 
-                </section>
-            </div>
+                </article>
+            </section>
             <section className="languages">
                 <h4>Languages and Frameworks I am proficient with:</h4>
                 <p className="lang-list">
@@ -57,33 +59,3 @@ export default function AboutPage() {
         </motion.main>
     )
 }
-
-/*
-    <div className="about"> 
-        <img className="profile-pic skele-bg" src="/assets/PG-profile-pic-city.png" alt="profile-pic" />
-        <section className="overview">
-            <p className="summary">
-                I am a software developer specializing in the development of frontend, backend, and fullstack web applications 
-                    as well as fullstack and monolithic desktop applications. 
-                I greatly enjoy the act of creating useful, in-depth applications that aid in the day to day for the end user 
-                    and further enjoy the mitigation of menial tasks through effieient automation and other techniques
-                I have also graduated from Flatiron School and have my associates degree from Brookdale Community College; 
-                    with experience from both and my background in customer service, I strive to provide the best and brightest 
-                    for those I work for and work with
-            </p>
-            <h3>I have experience with:</h3>
-            <p className="technologies">
-                Java
-                JavaScript
-                HTML
-                CSS
-                Ruby
-                Rails
-                React
-                Node.js
-                MySQL
-                PostreSQL
-            </p>
-        </section>
-    </div>
-*/

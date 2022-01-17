@@ -4,15 +4,15 @@ import App from './App';
 // TODO: Revert to HashRouter
 // import { HashRouter as Router } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import { NavContextProvider } from './utilities/context/NavContext';
+import { AppContextProvider } from './utilities/context/AppContext';
 
 
 ReactDOM.render(
     <Router>
         <React.StrictMode>
-            <NavContextProvider>
+            <AppContextProvider>
                 <App />
-            </NavContextProvider>
+            </AppContextProvider>
         </React.StrictMode>
     </Router>,
     document.getElementById('root')

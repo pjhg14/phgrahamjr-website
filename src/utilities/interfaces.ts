@@ -25,7 +25,7 @@ interface Requirement {
     requirement: string
 }
 
-interface Technology {
+export interface Technology {
     id: number
     name: string
 }

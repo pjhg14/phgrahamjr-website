@@ -2,8 +2,16 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { pageTransition } from "../utilities/animationVariants";
 import resume from "../resume/Paul_G_resume_ca2021.pdf";
+import { useContext } from "react";
+import { AppContext } from "../utilities/context/AppContext";
 
-export default function LandingPage(): JSX.Element {
+export default function Landing(): JSX.Element {
+    const { state, dispatch } = useContext(AppContext)
+
+    function toggleTheme() {
+        dispatch({type: "toggleTheme"})
+    }
+
     return(
         <motion.main 
             className="landing centered"
@@ -12,8 +20,8 @@ export default function LandingPage(): JSX.Element {
             animate="animate"
             exit="exit"
         >
-            <aside className="theme-toggle">
-                <i className={`fas fa-sun`}></i>
+            <aside className="theme-toggle" onClick={toggleTheme}>
+                <i className={`fas fa-${ state.isDarkTheme ? "sun" : "moon"}`}></i>
             </aside>
             <header>
                 <h1 className="main-title">My name is</h1>

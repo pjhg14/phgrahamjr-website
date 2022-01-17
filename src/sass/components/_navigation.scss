@@ -29,7 +29,7 @@
 
     
     .nav-title {
-        margin-top: var(--top-spacing);
+        margin-top: abstracts.$top-spacing;
         margin-block-start: 0;
         margin-block-end: 0;
         padding-top: 1em;
@@ -52,7 +52,7 @@
     }
     
     .nav-aside {
-        margin-top: var(--top-spacing);
+        margin-top: abstracts.$top-spacing;
     }
     
     .nav-tag {
@@ -93,7 +93,7 @@
         font-size: 1.5rem;
         padding-bottom: 5px;
         background-color: var(--background-color);
-        border-top: var(--bar-spacing) solid var(--accent-color);
+        border-top: abstracts.$bar-spacing solid var(--accent-color);
     }
     
     .nav-title {

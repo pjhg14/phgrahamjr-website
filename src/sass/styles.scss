@@ -2,8 +2,7 @@
 
 @use './base/normalize';
 
-@use './components/navigation';
-@use './components/skeleton';
+@use './components';
 
 @use './layouts/landing';
 @use './layouts/about';
@@ -11,32 +10,6 @@
 @use './layouts/contact';
 @use './layouts/null-path';
 
-// TODO: Move to normalize
-:root {
-    /* Font */
-    font-size: 16px;
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-
-    /* color vars */
-    /* color fallbacks */
-    --background-color: #262626;
-    --text-color: #e6dbdb;
-    --accent-color: #7bea5d;
-
-    /* main theme (dark theme) */
-    --background-color: hsl(110, 0%, 15%);
-    --text-color: hsl(0, 17%, 88%);
-    
-    /* navigation border green, link active green */
-    --accent-color: hsl(107, 77%, 64%);
-    --nav-active: rgba(255,255,255,0.2);
-    
-    --top-spacing: 5vh;
-    --bar-spacing: 0.25rem;
-    --nav-width: 9rem;
-}
-/* ---------------------------------------------------------------------------------------------------- */
-/* ---------------------------------------------------------------------------------------------------- */
 body {
     position: absolute;
     margin: 0;
@@ -59,21 +32,15 @@ body {
 }
 
 .App.light {
-    /* main theme (light theme) */
-    --background-color: hsl(0, 18%, 88%);
-    --text-color: hsl(110, 0%, 15%);
-    
-    /* navigation border green, link active green */
-    --accent-color: hsl(107, 77%, 25%);
-    --nav-active: rgba(0,0,0,0.2);
-    --gradient: linear-gradient(to right var(--accent-color),var(--text-color));
+    /* light theme (light theme) */
+    --background-color: #{abstracts.$light-background-color};
+    --text-color: #{abstracts.$light-text-color};
+    --accent-color: #{abstracts.$light-accent-color};
+
+    // undecided
+    --nav-active: rgba(0, 0, 0, 0.2);
     
 }
-/* ---------------------------------------------------------------------------------------------------- */
-/* ---------------------------------------------------------------------------------------------------- */
-
-
-
 
 /* ---------------------------------------------------------------------------------------------------- */
 /* Main Content /////////////////////////////////////////////////////////////////////////////////////// */

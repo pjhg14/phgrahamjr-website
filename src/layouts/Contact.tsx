@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { pageTransition } from "../utilities/animationVariants";
 
-// TODO: Change fa imports to css inclusion
-export default function ContactPage() {
+export default function Contact(): JSX.Element {
     return(
         <motion.main
             variants={pageTransition}
@@ -25,7 +24,9 @@ export default function ContactPage() {
                     paulhgrahamjr@gmail.com
                 </p>
             </section>
-            {/* TODO: Email Form */}
+            {/* TODO: Email Form 
+                Possibly ask whether to open email form or to open default email manager
+            */}
             {/* 
                 <form className="email-form">
                     <label className="form-label" htmlFor="name">Name / Email</label>

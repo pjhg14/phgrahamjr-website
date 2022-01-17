@@ -1,4 +1,10 @@
-$background-color: hsl(110, 0%, 15%);
-$text-color: hsl(0, 17%, 88%);
+// Dark
+$dark-background-color: hsl(110, 0%, 15%);
+$dark-text-color: hsl(0, 17%, 88%);
 $dark-accent-color: hsl(107, 77%, 65%);
-$light-accent-color: hsl(107, 77%, 25%);
+// lighter background color? (maybe just use opacity)
+
+// Light
+$light-background-color: hsl(20, 33%, 98%);
+$light-text-color: hsl(0, 0%, 20%);
+$light-accent-color: hsl(107, 70%, 65%);
