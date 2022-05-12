@@ -1,0 +1,43 @@
+@use '../abstracts';
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.demo-video {
+    aspect-ratio: 16 / 9;
+    width: 60vw;
+    justify-self: center;
+    align-self: center;
+}
+
+.video-fallback {
+    display: inline-block;
+    justify-self: center;
+    align-self: center;
+    aspect-ratio: 16 / 9;
+    width: 40vw;
+    border: 1px solid black;
+}
+
+.repo-bar {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+// TODO: change repo buttons
+
+.repo-button {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: 999px;
+    padding: 0.3rem 1em;
+
+    transition: color 500ms;
+
+    &:hover {
+        color: var(--accent-color)
+    }
+}

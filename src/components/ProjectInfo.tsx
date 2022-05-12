@@ -9,7 +9,7 @@ export default function ProjectInfo() {
     if (!state.project) return null
 
     return(
-        <div>
+        <div className="project-info">
             <h2>{state.project.title}</h2>
             { !!state.project.video_url ? (
                     <iframe

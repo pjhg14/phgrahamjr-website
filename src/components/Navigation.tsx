@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { NavLink } from "react-router-dom"
-import resume from "../resume/Paul_G_resume_ca2021.pdf";
+import resume from "../resume/Paul_G_resume_ca2022.pdf";
 import { AppContext } from "../utilities/context/AppContext";
 
 export default function Navigation() {
@@ -20,23 +20,23 @@ export default function Navigation() {
                 <nav className="navigation">
                     <p className="nav-title">Menu</p>
                     <NavLink className="nav-button" to="/">
-                        <i className="fas fa-home"></i>
+                        {/* <i className="fas fa-home"></i> */}
                         <span>Title</span>
                     </NavLink>
                     <NavLink className="nav-button" to="/about">
-                        <i className="far fa-address-card"></i>
+                        {/* <i className="far fa-address-card"></i> */}
                         <span>About</span>
                     </NavLink>
                     <NavLink className="nav-button" to="/projects">
-                        <i className="fas fa-project-diagram"></i>
+                        {/* <i className="fas fa-project-diagram"></i> */}
                         <span>Projects</span>
                     </NavLink>
                     <NavLink className="nav-button" to="/contacts">
-                        <i className="far fa-address-book"></i>
+                        {/* <i className="far fa-address-book"></i> */}
                         <span>Contact</span>
                     </NavLink>
                     <a className="nav-button" href={resume} target="_blank" rel="noreferrer">
-                        <i className="far fa-file-alt"></i>
+                        {/* <i className="far fa-file-alt"></i> */}
                         <span>Resume</span>
                     </a>
                     <button className="nav-button theme" onClick={toggleDarkTheme}>

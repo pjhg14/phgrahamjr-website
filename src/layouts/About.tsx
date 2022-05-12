@@ -5,10 +5,10 @@ export default function About(): JSX.Element {
     return(
         <motion.main 
             className="about"
-            variants={pageTransition}
-            initial="initial"
-            animate="animate"
-            exit="exit"
+            // variants={pageTransition}
+            // initial="initial"
+            // animate="animate"
+            // exit="exit"
         >
             <header>
                 <h2>About me</h2>

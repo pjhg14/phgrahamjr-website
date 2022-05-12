@@ -13,6 +13,7 @@ export default function ProjectCard({ project }) {
         })
     }
 
+    // TODO: Move current card off screen on modal open dispatch to give illusion of drawing a card
     return(
         <div className="project-card" onClick={handleCardClick} onKeyDown={handleCardClick} tabIndex="0">
             <div className="project-card-content">

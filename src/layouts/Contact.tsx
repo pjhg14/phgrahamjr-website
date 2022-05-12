@@ -4,10 +4,10 @@ import { pageTransition } from "../utilities/animationVariants";
 export default function Contact(): JSX.Element {
     return(
         <motion.main
-            variants={pageTransition}
-            initial="initial"
-            animate="animate"
-            exit="exit"
+            // variants={pageTransition}
+            // initial="initial"
+            // animate="animate"
+            // exit="exit"
         >
             <h2>Find me here</h2>
             <section className="links">

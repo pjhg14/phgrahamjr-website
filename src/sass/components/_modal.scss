@@ -17,12 +17,12 @@
     --background-color: #{abstracts.$dark-background-color};
     --text-color: #{abstracts.$dark-text-color};
     --accent-color: #{abstracts.$dark-accent-color};
-}
 
-.backdrop.light {
-    --background-color: #{abstracts.$light-background-color};
-    --text-color: #{abstracts.$light-text-color};
-    --accent-color: #{abstracts.$light-accent-color};
+    &.light {
+        --background-color: #{abstracts.$light-background-color};
+        --text-color: #{abstracts.$light-text-color};
+        --accent-color: #{abstracts.$light-accent-color};
+    }
 }
 
 // TODO: format inner modal positions (looks weird rn)
@@ -40,46 +40,9 @@
 }
 
 .modal-close {
-    position: absolute;
-    right: 0.5rem;
-    top: 0.5rem;
+    // position: absolute;
+    // right: 0.5rem;
+    // top: 0.5rem;
     cursor: pointer;
-    /* border: none;
-    background-color: transparent; */
-    /* add background image here */
-}
-
-.demo-video {
-    aspect-ratio: 16 / 9;
-    width: 60vw;
-    justify-self: center;
-}
-
-.video-fallback {
-    display: inline-block;
-    align-self: center;
-    aspect-ratio: 16 / 9;
-    width: 40vw;
-    border: 1px solid black;
-}
-
-.repo-bar {
-    display: flex;
-    gap: 1rem;
-    margin: 1rem 0;
-}
-
-// TODO: change repo buttons
-
-.repo-button {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    border-radius: 999px;
-    padding: 0.3rem 1em;
-
-    transition: color 500ms;
-}
-
-.repo-button:hover {
-    color: var(--accent-color)
+    align-self: flex-end;
 }

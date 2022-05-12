@@ -41,18 +41,18 @@ export default function Modal({ children }: ModalProps) {
         <AnimatePresence exitBeforeEnter>
             { state.visible && 
                 <motion.div 
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
                     className="backdrop" //add light / dark toggle to class list 
                     onClick={handleClose}
+                    // initial={{ opacity: 0 }}
+                    // animate={{ opacity: 1 }}
+                    // exit={{ opacity: 0 }}
                 >    
                     <motion.div className="modal"
                         onClick={e => e.stopPropagation()}
-                        variants={dropIn}
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
+                        // variants={dropIn}
+                        // initial="hidden"
+                        // animate="visible"
+                        // exit="exit"
                     >   
                         <i className="fas fa-times modal-close" onClick={handleClose}></i>
                         { children }

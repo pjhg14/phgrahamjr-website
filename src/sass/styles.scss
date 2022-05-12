@@ -52,26 +52,42 @@ main {
     flex-grow: 8;
     overflow-y: scroll;
     color: var(--text-color);
+
+    &.centered {
+        justify-content: center;
+        align-items: center;
+    }
+
+    &::-webkit-scrollbar {
+        width: var(--bar-spacing);
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(--background-color);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--accent-color);
+    }
 }
 
-main::-webkit-scrollbar {
-    width: var(--bar-spacing);
-}
+// main::-webkit-scrollbar {
+//     width: var(--bar-spacing);
+// }
 
-main::-webkit-scrollbar-track {
-    background-color: var(--background-color);
+// main::-webkit-scrollbar-track {
+//     background-color: var(--background-color);
+// }
 
-}
+// main::-webkit-scrollbar-thumb {
+//     background-color: var(--accent-color);
+//     /* border-radius: .5rem; */
+// }
 
-main::-webkit-scrollbar-thumb {
-    background-color: var(--accent-color);
-    /* border-radius: .5rem; */
-}
-
-main.centered {
-    justify-content: center;
-    align-items: center;
-}
+// main.centered {
+//     justify-content: center;
+//     align-items: center;
+// }
 
 /* ---------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------- */
@@ -110,5 +126,5 @@ main.centered {
         scroll-behavior: auto !important;
         transition-duration: 0s !important;
         transition-delay: 0s !important;
-      }
+    }
 }

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { pageTransition } from "../utilities/animationVariants";
-import resume from "../resume/Paul_G_resume_ca2021.pdf";
+import resume from "../resume/Paul_G_resume_ca2022.pdf";
 import { useContext } from "react";
 import { AppContext } from "../utilities/context/AppContext";
 
@@ -15,10 +15,10 @@ export default function Landing(): JSX.Element {
     return(
         <motion.main 
             className="landing centered"
-            variants={pageTransition}
-            initial="initial"
-            animate="animate"
-            exit="exit"
+            // variants={pageTransition}
+            // initial="initial"
+            // animate="animate"
+            // exit="exit"
         >
             <aside className="theme-toggle" onClick={toggleTheme}>
                 <i className={`fas fa-${ state.isDarkTheme ? "sun" : "moon"}`}></i>

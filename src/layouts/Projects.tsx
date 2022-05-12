@@ -229,10 +229,10 @@ export default function Project(): JSX.Element {
         <ModalContextProvider>
             <motion.main 
                 className="projects"
-                variants={pageTransition}
-                initial="initial"
-                animate="animate"
-                exit="exit"
+                // variants={pageTransition}
+                // initial="initial"
+                // animate="animate"
+                // exit="exit"
             >
                 <Modal>
                     <ProjectInfo />
