@@ -1,21 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.9b52ce53.chunk.css",
-    "main.js": "/static/js/main.9b5380a3.chunk.js",
-    "main.js.map": "/static/js/main.9b5380a3.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.8233b8b5.js",
-    "runtime-main.js.map": "/static/js/runtime-main.8233b8b5.js.map",
-    "static/js/2.d4097c91.chunk.js": "/static/js/2.d4097c91.chunk.js",
-    "static/js/2.d4097c91.chunk.js.map": "/static/js/2.d4097c91.chunk.js.map",
+    "main.css": "/static/css/main.bb19c328.css",
+    "main.js": "/static/js/main.09dab0ab.js",
+    "static/media/Paul_G_resume_ca2022.pdf": "/static/media/Paul_G_resume_ca2022.25a2293e7ace9e929266.pdf",
     "index.html": "/index.html",
-    "static/css/main.9b52ce53.chunk.css.map": "/static/css/main.9b52ce53.chunk.css.map",
-    "static/js/2.d4097c91.chunk.js.LICENSE.txt": "/static/js/2.d4097c91.chunk.js.LICENSE.txt",
-    "static/media/Paul_G_resume_ca2021.033281f6.pdf": "/static/media/Paul_G_resume_ca2021.033281f6.pdf"
+    "main.bb19c328.css.map": "/static/css/main.bb19c328.css.map",
+    "main.09dab0ab.js.map": "/static/js/main.09dab0ab.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.8233b8b5.js",
-    "static/js/2.d4097c91.chunk.js",
-    "static/css/main.9b52ce53.chunk.css",
-    "static/js/main.9b5380a3.chunk.js"
+    "static/css/main.bb19c328.css",
+    "static/js/main.09dab0ab.js"
   ]
 }
